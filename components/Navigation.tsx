@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X, PhoneCall } from 'lucide-react';
 
@@ -19,9 +20,6 @@ export const Navigation: React.FC = () => {
     const element = document.getElementById(targetId);
     if (element) {
       const headerOffset = 80;
-      
-      // 모바일 환경(768px 미만)이고 상담신청(#consultation)일 경우 
-      // 기존 420px에서 약 1행(30px) 위로 조정한 390px 추가 스크롤
       const isMobile = window.innerWidth < 768;
       const additionalOffset = (isMobile && targetId === 'consultation') ? 390 : 0;
 
@@ -38,10 +36,8 @@ export const Navigation: React.FC = () => {
 
   const navLinks = [
     { name: '비전 & 혜택', href: '#vision' },
-    { name: '시험일정', href: '#schedule' },
+    { name: '취업지원', href: '#employment-support' },
     { name: '과정소개', href: '#courses' },
-    { name: '전기기능사', href: '#course-1' },
-    { name: '전기(산업)기사', href: '#course-2' },
     { name: '취업현황', href: '#employment' },
     { name: '상담신청', href: '#consultation' },
   ];
@@ -76,13 +72,8 @@ export const Navigation: React.FC = () => {
           <a 
             href="tel:18775280" 
             onClick={(e) => {
-              // PC 환경(1024px 이상)에서는 스크롤, 모바일에서는 전화 연결
-              // handleNavClick에는 e.preventDefault()가 있어 링크 이동(전화)을 막고 스크롤합니다.
-              // 모바일에서는 이 함수를 호출하지 않음으로써 href="tel:..."이 정상 작동하게 합니다.
               const isPc = window.innerWidth >= 1024;
-              if (isPc) {
-                handleNavClick(e, '#consultation');
-              }
+              if (isPc) handleNavClick(e, '#consultation');
             }}
             className="flex items-center gap-2 bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-lg hover:bg-yellow-300 transition-transform hover:scale-105"
           >
