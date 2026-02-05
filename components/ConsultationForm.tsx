@@ -21,7 +21,7 @@ const Reveal: React.FC<RevealProps> = ({ children, className = "", delay = 0 }) 
           observer.disconnect();
         }
       },
-      { threshold: 0.01, rootMargin: '0px' } // 1% 진입 시 즉시 실행
+      { threshold: 0.01, rootMargin: '0px' }
     );
 
     if (ref.current) {
@@ -50,7 +50,7 @@ export const ConsultationForm: React.FC = () => {
   const [isAgreed, setIsAgreed] = useState(true);
   const [ipAddress, setIpAddress] = useState('');
 
-  // 접속자 IP 가져오기 (비동기 처리)
+  // 접속자 IP 가져오기
   useEffect(() => {
     const fetchIp = async () => {
       try {
@@ -58,7 +58,6 @@ export const ConsultationForm: React.FC = () => {
         const data = await response.json();
         if (data.ip) {
           setIpAddress(data.ip);
-          console.log('Client IP collected:', data.ip);
         }
       } catch (error) {
         console.error('IP 수집 실패:', error);
@@ -70,8 +69,8 @@ export const ConsultationForm: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!isAgreed) {
-        alert("개인정보 수집 및 이용에 동의해야 합니다.");
-        return;
+      alert("개인정보 수집 및 이용에 동의해야 합니다.");
+      return;
     }
     setStatus("SUBMITTING");
     
@@ -79,8 +78,8 @@ export const ConsultationForm: React.FC = () => {
     const data = new FormData(form);
     
     try {
-      // 지정된 새 Formspree 엔드포인트로 전송
-      const response = await fetch("https://formspree.io/f/xpqjaqay", {
+      // 요청하신 데이터 수집용 Formspree 엔드포인트
+      const response = await fetch("https://formspree.io/f/xqedzajp", {
         method: "POST",
         body: data,
         headers: {
@@ -93,9 +92,11 @@ export const ConsultationForm: React.FC = () => {
         form.reset();
       } else {
         setStatus("ERROR");
+        alert("전송 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
       }
     } catch (error) {
       setStatus("ERROR");
+      alert("네트워크 오류가 발생했습니다.");
     }
   };
 
@@ -155,8 +156,9 @@ export const ConsultationForm: React.FC = () => {
                   </div>
               ) : (
                   <form onSubmit={handleSubmit} className="space-y-2 md:space-y-3">
-                  {/* IP 주소 수집용 히든 필드 (user_ip) */}
+                  {/* IP 주소 및 메타데이터 */}
                   <input type="hidden" name="user_ip" value={ipAddress} />
+                  <input type="hidden" name="_subject" value="[신규 상담 신청] 한직교 AI 챗봇 개발 과정" />
 
                   <h3 className="text-lg font-bold mb-2 md:mb-3 flex items-center gap-2">
                       빠른 교육상담 신청
@@ -166,17 +168,17 @@ export const ConsultationForm: React.FC = () => {
                   <div className="grid md:grid-cols-2 gap-2 md:gap-3">
                       <div className="space-y-0.5 md:space-y-1">
                           <label className="text-xs font-bold text-gray-700 ml-1">이름</label>
-                          <input required name="name" type="text" placeholder="홍길동" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                          <input required name="이름" type="text" placeholder="홍길동" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
                       </div>
                       <div className="space-y-0.5 md:space-y-1">
                           <label className="text-xs font-bold text-gray-700 ml-1">나이</label>
-                          <input required name="age" type="text" placeholder="예: 30" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                          <input required name="나이" type="text" placeholder="예: 30" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
                       </div>
                   </div>
 
                   <div className="space-y-0.5 md:space-y-1">
                       <label className="text-xs font-bold text-gray-700 ml-1">연락처</label>
-                      <input required name="phone" type="tel" placeholder="010-0000-0000" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                      <input required name="연락처" type="tel" placeholder="010-0000-0000" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
                   </div>
 
                   <div className="space-y-0.5 md:space-y-1">
@@ -184,7 +186,7 @@ export const ConsultationForm: React.FC = () => {
                       <div className="flex flex-wrap gap-1.5 md:gap-2">
                           {['취업/이직', '자기개발', '창업', '기타'].map((purpose) => (
                               <label key={purpose} className="flex items-center gap-2 p-1.5 md:p-2 border rounded-lg cursor-pointer hover:bg-gray-50 flex-1 min-w-[80px] justify-center">
-                                  <input type="radio" name="purpose" value={purpose} required className="accent-yellow-400 w-3.5 h-3.5" />
+                                  <input type="radio" name="교육목적" value={purpose} required className="accent-yellow-400 w-3.5 h-3.5" />
                                   <span className="text-xs font-bold">{purpose}</span>
                               </label>
                           ))}
@@ -193,7 +195,7 @@ export const ConsultationForm: React.FC = () => {
 
                   <div className="space-y-0.5 md:space-y-1">
                       <label className="text-xs font-bold text-gray-700 ml-1">문의내용</label>
-                      <textarea name="message" rows={2} placeholder="궁금하신 점을 자유롭게 적어주세요." className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all resize-none text-sm"></textarea>
+                      <textarea name="문의내용" rows={2} placeholder="궁금하신 점을 자유롭게 적어주세요." className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all resize-none text-sm"></textarea>
                   </div>
 
                   {/* Privacy Policy */}
@@ -240,8 +242,9 @@ export const ConsultationForm: React.FC = () => {
                   </div>
 
                   <button 
+                      type="submit"
                       disabled={status === "SUBMITTING"}
-                      className="w-full bg-black text-white font-bold py-3 rounded-lg text-base hover:bg-zinc-800 transition-colors flex items-center justify-center gap-2 shadow-lg"
+                      className="w-full bg-black text-white font-bold py-3 rounded-lg text-base hover:bg-zinc-800 transition-colors flex items-center justify-center gap-2 shadow-lg disabled:bg-gray-400"
                   >
                       {status === "SUBMITTING" ? "전송 중..." : "무료상담 신청하기"}
                       <Send size={16} />
