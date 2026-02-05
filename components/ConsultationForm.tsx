@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect, ReactNode } from 'react';
 import { Send, Phone, MapPin, ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -172,15 +173,9 @@ export const ConsultationForm: React.FC = () => {
                       </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-2 md:gap-3">
-                      <div className="space-y-0.5 md:space-y-1">
-                          <label className="text-xs font-bold text-gray-700 ml-1">연락처</label>
-                          <input required name="phone" type="tel" placeholder="010-0000-0000" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
-                      </div>
-                      <div className="space-y-0.5 md:space-y-1">
-                          <label className="text-xs font-bold text-gray-700 ml-1">거주지역</label>
-                          <input required name="location" type="text" placeholder="예: 서울, 인천" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
-                      </div>
+                  <div className="space-y-0.5 md:space-y-1">
+                      <label className="text-xs font-bold text-gray-700 ml-1">연락처</label>
+                      <input required name="phone" type="tel" placeholder="010-0000-0000" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
                   </div>
 
                   <div className="space-y-0.5 md:space-y-1">
@@ -234,7 +229,7 @@ export const ConsultationForm: React.FC = () => {
                                   <div className="font-medium py-0.5">온라인문의</div>
                                   
                                   <div className="font-bold text-gray-600 bg-gray-100 rounded px-1 py-0.5 text-center">수집항목</div>
-                                  <div className="font-medium py-0.5">이름, 연락처, 거주지역, 교육목적, 문의내용</div>
+                                  <div className="font-medium py-0.5">이름, 나이, 연락처, 교육목적, 문의내용</div>
                                   
                                   <div className="font-bold text-gray-600 bg-gray-100 rounded px-1 py-0.5 text-center">보유기간</div>
                                   <div className="font-medium py-0.5">60일</div>
