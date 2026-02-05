@@ -79,7 +79,8 @@ export const ConsultationForm: React.FC = () => {
     const data = new FormData(form);
     
     try {
-      const response = await fetch("https://formspree.io/f/mreazbnd", {
+      // 지정된 새 Formspree 엔드포인트로 전송
+      const response = await fetch("https://formspree.io/f/xpqjaqay", {
         method: "POST",
         body: data,
         headers: {
