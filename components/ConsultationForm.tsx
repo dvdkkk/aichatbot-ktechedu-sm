@@ -141,7 +141,7 @@ export const ConsultationForm: React.FC = () => {
 
           {/* Right Form */}
           <Reveal delay={200} className="h-full">
-            <div className="bg-white rounded-2xl p-5 md:p-7 shadow-2xl h-full">
+            <div className="bg-white rounded-2xl p-4 md:p-7 shadow-2xl h-full">
               {status === "SUCCESS" ? (
                   <div className="text-center py-12">
                       <div className="w-14 h-14 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -152,42 +152,42 @@ export const ConsultationForm: React.FC = () => {
                       <button onClick={() => setStatus("IDLE")} className="mt-6 text-xs text-gray-500 underline">다시 작성하기</button>
                   </div>
               ) : (
-                  <form onSubmit={handleSubmit} className="space-y-3">
+                  <form onSubmit={handleSubmit} className="space-y-2 md:space-y-3">
                   {/* IP 주소 수집용 히든 필드 (user_ip) */}
                   <input type="hidden" name="user_ip" value={ipAddress} />
 
-                  <h3 className="text-lg font-bold mb-3 flex items-center gap-2">
+                  <h3 className="text-lg font-bold mb-2 md:mb-3 flex items-center gap-2">
                       빠른 교육상담 신청
                       <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
                   </h3>
                   
-                  <div className="grid md:grid-cols-2 gap-3">
-                      <div className="space-y-1">
+                  <div className="grid md:grid-cols-2 gap-2 md:gap-3">
+                      <div className="space-y-0.5 md:space-y-1">
                           <label className="text-xs font-bold text-gray-700 ml-1">이름</label>
-                          <input required name="name" type="text" placeholder="홍길동" className="w-full px-3 py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                          <input required name="name" type="text" placeholder="홍길동" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
                       </div>
-                      <div className="space-y-1">
+                      <div className="space-y-0.5 md:space-y-1">
                           <label className="text-xs font-bold text-gray-700 ml-1">나이</label>
-                          <input required name="age" type="text" placeholder="예: 30" className="w-full px-3 py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                          <input required name="age" type="text" placeholder="예: 30" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
                       </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-3">
-                      <div className="space-y-1">
+                  <div className="grid md:grid-cols-2 gap-2 md:gap-3">
+                      <div className="space-y-0.5 md:space-y-1">
                           <label className="text-xs font-bold text-gray-700 ml-1">연락처</label>
-                          <input required name="phone" type="tel" placeholder="010-0000-0000" className="w-full px-3 py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                          <input required name="phone" type="tel" placeholder="010-0000-0000" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
                       </div>
-                      <div className="space-y-1">
+                      <div className="space-y-0.5 md:space-y-1">
                           <label className="text-xs font-bold text-gray-700 ml-1">거주지역</label>
-                          <input required name="location" type="text" placeholder="예: 서울, 인천" className="w-full px-3 py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                          <input required name="location" type="text" placeholder="예: 서울, 인천" className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
                       </div>
                   </div>
 
-                  <div className="space-y-1">
+                  <div className="space-y-0.5 md:space-y-1">
                       <label className="text-xs font-bold text-gray-700 ml-1">교육목적</label>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5 md:gap-2">
                           {['취업/이직', '자기개발', '창업', '기타'].map((purpose) => (
-                              <label key={purpose} className="flex items-center gap-2 p-2 border rounded-lg cursor-pointer hover:bg-gray-50 flex-1 min-w-[80px] justify-center">
+                              <label key={purpose} className="flex items-center gap-2 p-1.5 md:p-2 border rounded-lg cursor-pointer hover:bg-gray-50 flex-1 min-w-[80px] justify-center">
                                   <input type="radio" name="purpose" value={purpose} required className="accent-yellow-400 w-3.5 h-3.5" />
                                   <span className="text-xs font-bold">{purpose}</span>
                               </label>
@@ -195,9 +195,9 @@ export const ConsultationForm: React.FC = () => {
                       </div>
                   </div>
 
-                  <div className="space-y-1">
+                  <div className="space-y-0.5 md:space-y-1">
                       <label className="text-xs font-bold text-gray-700 ml-1">문의내용</label>
-                      <textarea name="message" rows={2} placeholder="궁금하신 점을 자유롭게 적어주세요." className="w-full px-3 py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all resize-none text-sm"></textarea>
+                      <textarea name="message" rows={2} placeholder="궁금하신 점을 자유롭게 적어주세요." className="w-full px-3 py-2 md:py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all resize-none text-sm"></textarea>
                   </div>
 
                   {/* Privacy Policy */}
@@ -225,25 +225,20 @@ export const ConsultationForm: React.FC = () => {
                       </div>
 
                       {isPrivacyOpen && (
-                          <div className="bg-gray-50 p-2 rounded-lg text-[10px] text-black animate-fade-in-down border border-gray-200 mb-2">
-                              <h5 className="font-bold mb-1">개인정보 수집 및 이용 동의 (필수)</h5>
-                              <p className="mb-1 leading-tight">국비교육원 실시간온라인문의 신청을 위해 다음과 같이 개인정보를 수집 및 이용합니다.</p>
-                              <table className="w-full border-collapse border border-gray-300 mb-1 text-center bg-white">
-                                  <thead>
-                                      <tr className="bg-gray-100">
-                                          <th className="border border-gray-300 p-0.5 text-black font-bold">수집목적</th>
-                                          <th className="border border-gray-300 p-0.5 text-black font-bold">수집항목</th>
-                                          <th className="border border-gray-300 p-0.5 text-black font-bold">보유기간</th>
-                                      </tr>
-                                  </thead>
-                                  <tbody>
-                                      <tr>
-                                          <td className="border border-gray-300 p-0.5">온라인문의</td>
-                                          <td className="border border-gray-300 p-0.5">이름, 연락처</td>
-                                          <td className="border border-gray-300 p-0.5">60일</td>
-                                      </tr>
-                                  </tbody>
-                              </table>
+                          <div className="bg-gray-50 p-2.5 rounded-lg text-[10px] text-black animate-fade-in-down border border-gray-200 mb-2">
+                              <h5 className="font-bold mb-1.5">개인정보 수집 및 이용 동의 (필수)</h5>
+                              <p className="mb-2 leading-tight">한국직업능력교육원 실시간온라인문의 신청을 위해 다음과 같이 개인정보를 수집 및 이용합니다.</p>
+                              
+                              <div className="grid grid-cols-[60px_1fr] gap-y-1.5 gap-x-2 border-t border-gray-200 pt-2 text-left">
+                                  <div className="font-bold text-gray-600 bg-gray-100 rounded px-1 py-0.5 text-center">수집목적</div>
+                                  <div className="font-medium py-0.5">온라인문의</div>
+                                  
+                                  <div className="font-bold text-gray-600 bg-gray-100 rounded px-1 py-0.5 text-center">수집항목</div>
+                                  <div className="font-medium py-0.5">이름, 연락처, 거주지역, 교육목적, 문의내용</div>
+                                  
+                                  <div className="font-bold text-gray-600 bg-gray-100 rounded px-1 py-0.5 text-center">보유기간</div>
+                                  <div className="font-medium py-0.5">60일</div>
+                              </div>
                           </div>
                       )}
                   </div>
