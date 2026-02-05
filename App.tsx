@@ -11,7 +11,7 @@ import { Footer } from './components/Footer';
 import { FloatingCTA } from './components/FloatingCTA';
 import { CursorFollower } from './components/CursorFollower';
 import { EmploymentSupport } from './components/EmploymentSupport';
-import { SuccessStrategy } from './components/SuccessStrategy';
+import { HanjikgyoBenefits } from './components/HanjikgyoBenefits';
 import { ContentProvider, useContent } from './contexts/ContentContext';
 import { AdminDashboard } from './components/AdminDashboard';
 import { AdminLogin } from './components/AdminLogin';
@@ -118,9 +118,9 @@ function AppContent() {
         <Hero />
         <IntroSection />
         <VisionSection />
+        <HanjikgyoBenefits />
         <EmploymentSupport />
         <CourseSection />
-        <SuccessStrategy />
         <EmploymentSection />
         <ConsultationForm />
       </main>
