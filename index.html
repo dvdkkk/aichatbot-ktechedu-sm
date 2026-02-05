@@ -41,6 +41,29 @@
       .animate-marquee:hover {
         animation-play-state: paused;
       }
+
+      /* 수치 팝업 애니메이션 */
+      @keyframes popInAttention {
+        0% { transform: scale(0.5) translate(-50%, 20px); opacity: 0; }
+        70% { transform: scale(1.1) translate(-50%, -10px); opacity: 1; }
+        100% { transform: scale(1) translate(-50%, 0); opacity: 1; }
+      }
+      .animate-pop-in {
+        animation: popInAttention 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+      }
+
+      /* 금색 광택 효과 */
+      @keyframes shine {
+        0% { background-position: -200% center; }
+        100% { background-position: 200% center; }
+      }
+      .text-shine {
+        background: linear-gradient(90deg, #fbbf24 0%, #ffffff 50%, #fbbf24 100%);
+        background-size: 200% auto;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shine 3s linear infinite;
+      }
     </style>
   <script type="importmap">
 {
