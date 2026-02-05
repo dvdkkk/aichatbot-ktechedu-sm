@@ -93,7 +93,7 @@ export const EmploymentSection: React.FC = () => {
       <div className="container mx-auto px-4">
         <Reveal className="text-center mb-8" delay={200}>
           <h2 className="text-yellow-400 text-xs font-bold tracking-widest uppercase mb-3">JOB PROCESS</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">에듀윌 취업 지원 프로세스</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-6">한국직업능력교육원 취업 지원 프로세스</h3>
           <p className="text-gray-400 text-sm md:text-base max-w-xl">
             입학부터 취업까지 체계적인 5단계 시스템
           </p>

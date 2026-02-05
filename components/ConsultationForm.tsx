@@ -78,7 +78,7 @@ export const ConsultationForm: React.FC = () => {
     const data = new FormData(form);
     
     try {
-      const response = await fetch("https://formspree.io/f/mvzzjrgz", {
+      const response = await fetch("https://formspree.io/f/xqedzajp", {
         method: "POST",
         body: data,
         headers: {
@@ -107,7 +107,7 @@ export const ConsultationForm: React.FC = () => {
             <Reveal>
               <h2 className="text-3xl md:text-4xl font-black leading-tight mb-6">
                 망설이지 마세요.<br/>
-                전기자격증 전문가가 <br/>
+                IT/AI 전문가가 <br/>
                 친절하게 안내해드립니다.
               </h2>
               <p className="text-lg font-medium text-black/80 mb-6">
@@ -131,7 +131,7 @@ export const ConsultationForm: React.FC = () => {
                       </div>
                       <div>
                           <p className="text-xs font-bold opacity-70">교육장소</p>
-                          <p className="text-lg font-bold">부평 / 구로 / 성남</p>
+                          <p className="text-lg font-bold">안산</p>
                       </div>
                   </div>
               </div>
@@ -172,26 +172,26 @@ export const ConsultationForm: React.FC = () => {
                       </div>
                   </div>
 
-                  <div className="space-y-1">
-                      <label className="text-xs font-bold text-gray-700 ml-1">연락처</label>
-                      <input required name="phone" type="tel" placeholder="010-0000-0000" className="w-full px-3 py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                  <div className="grid md:grid-cols-2 gap-3">
+                      <div className="space-y-1">
+                          <label className="text-xs font-bold text-gray-700 ml-1">연락처</label>
+                          <input required name="phone" type="tel" placeholder="010-0000-0000" className="w-full px-3 py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                      </div>
+                      <div className="space-y-1">
+                          <label className="text-xs font-bold text-gray-700 ml-1">거주지역</label>
+                          <input required name="location" type="text" placeholder="예: 서울, 인천" className="w-full px-3 py-2.5 rounded-lg border border-gray-200 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-400/20 outline-none transition-all text-sm" />
+                      </div>
                   </div>
 
                   <div className="space-y-1">
-                      <label className="text-xs font-bold text-gray-700 ml-1">관심과정</label>
+                      <label className="text-xs font-bold text-gray-700 ml-1">교육목적</label>
                       <div className="flex flex-wrap gap-2">
-                          <label className="flex items-center gap-2 p-2 border rounded-lg cursor-pointer hover:bg-gray-50 flex-1 min-w-[100px] justify-center">
-                              <input type="radio" name="course" value="전기기능사" required className="accent-yellow-400 w-3.5 h-3.5" />
-                              <span className="text-xs font-bold">전기기능사</span>
-                          </label>
-                          <label className="flex items-center gap-2 p-2 border rounded-lg cursor-pointer hover:bg-gray-50 flex-1 min-w-[100px] justify-center">
-                              <input type="radio" name="course" value="전기산업기사" className="accent-yellow-400 w-3.5 h-3.5" />
-                              <span className="text-xs font-bold">전기산업기사</span>
-                          </label>
-                          <label className="flex items-center gap-2 p-2 border rounded-lg cursor-pointer hover:bg-gray-50 flex-1 min-w-[100px] justify-center">
-                              <input type="radio" name="course" value="전기기사" className="accent-yellow-400 w-3.5 h-3.5" />
-                              <span className="text-xs font-bold">전기기사</span>
-                          </label>
+                          {['취업/이직', '자기개발', '창업', '기타'].map((purpose) => (
+                              <label key={purpose} className="flex items-center gap-2 p-2 border rounded-lg cursor-pointer hover:bg-gray-50 flex-1 min-w-[80px] justify-center">
+                                  <input type="radio" name="purpose" value={purpose} required className="accent-yellow-400 w-3.5 h-3.5" />
+                                  <span className="text-xs font-bold">{purpose}</span>
+                              </label>
+                          ))}
                       </div>
                   </div>
 

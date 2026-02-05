@@ -11,7 +11,7 @@ export const COURSES: Course[] = [
     schedule: '매달 신규 개강',
     classTime: '주5회(월~금) or 주2회(토,일)',
     capacity: '20명(오프라인)',
-    locations: '부평 / 구로 / 성남',
+    locations: '안산',
     video: 'https://mblogvideo-phinf.pstatic.net/MjAyNjAxMjdfMTk1/MDAxNzY5NDk1MzA3NDU5.xDgtRREWWbuutZx7I6mWFwm059SbAaDVzpJCNl6qUUYg.UxLjnZDycE2w5gJLaztevGu5HUub5RmZEYsv0R_4ltEg.GIF/gif2.gif?type=mp4w800',
     curriculum: [
       {
@@ -62,7 +62,7 @@ export const COURSES: Course[] = [
     schedule: '매달 신규 개강',
     classTime: '주5회(월~금) or 주2회(토,일)',
     capacity: '20명(오프라인)',
-    locations: '부평 / 구로 / 성남',
+    locations: '안산',
     video: 'https://mblogvideo-phinf.pstatic.net/MjAyNjAxMjdfOTMg/MDAxNzY5NDk1MzA3NDUx.Vy02fiUDugB02PVKMeGVScFNdWmt96WlVIH7J7AnQegg.WzAUEBNxXhoT9N0lKlNiSTuLvBUFEmft5UEAfzx_mZsg.GIF/gif1.gif?type=mp4w800',
     
     curriculum: [
@@ -97,23 +97,23 @@ export const COURSES: Course[] = [
 ];
 
 export const EMPLOYMENT_STATUS: EmploymentStatus[] = [
-  { company: '한국화학융합시험연구원', name: '임OO', branch: '부평', license: '전기(산업)기사(실기)' },
-  { company: '(주)에스피씨삼립', name: '이OO', branch: '부평', license: '전기기능사(실기)' },
-  { company: '(주)예스쿨', name: '한OO', branch: '부평', license: '전기기능사(실기)' },
-  { company: '파트론', name: '노OO', branch: '부평', license: '전기(산업)기사(필기)' },
-  { company: '주식회사 가온전력', name: '송OO', branch: '부평', license: '전기기능사(실기)' },
-  { company: '서울시설공단', name: '정OO', branch: '구로', license: '전기기능사(필기+실기)' },
-  { company: '유한회사 오리스코리아', name: '박OO', branch: '구로', license: '전기(산업)기사(필기+실기)' },
-  { company: '대한전기안전관리아이캔', name: '조OO', branch: '구로', license: '전기(산업)기사(필기+실기)' },
-  { company: '주식회사 컴피아', name: '김OO', branch: '구로', license: '전기기능사(필기+실기)' },
-  { company: '(주)이랜드서비스', name: '정OO', branch: '구로', license: '전기(산업)기사(필기+실기)' },
+  { company: '한국화학융합시험연구원', name: '임OO', branch: '안산', license: '전기(산업)기사(실기)' },
+  { company: '(주)에스피씨삼립', name: '이OO', branch: '안산', license: '전기기능사(실기)' },
+  { company: '(주)예스쿨', name: '한OO', branch: '안산', license: '전기기능사(실기)' },
+  { company: '파트론', name: '노OO', branch: '안산', license: '전기(산업)기사(필기)' },
+  { company: '주식회사 가온전력', name: '송OO', branch: '안산', license: '전기기능사(실기)' },
+  { company: '서울시설공단', name: '정OO', branch: '안산', license: '전기기능사(필기+실기)' },
+  { company: '유한회사 오리스코리아', name: '박OO', branch: '안산', license: '전기(산업)기사(필기+실기)' },
+  { company: '대한전기안전관리아이캔', name: '조OO', branch: '안산', license: '전기(산업)기사(필기+실기)' },
+  { company: '주식회사 컴피아', name: '김OO', branch: '안산', license: '전기기능사(필기+실기)' },
+  { company: '(주)이랜드서비스', name: '정OO', branch: '안산', license: '전기(산업)기사(필기+실기)' },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
   { step: '01', title: '취업지원 컨설팅', description: '취업상담 신청 시 프로그램 설명 및 컨설팅 진행' },
   { step: '02', title: '이력서·자소서 교육', description: '직무 성격에 맞는 1:1 맞춤 코칭 및 작성' },
   { step: '03', title: '모의면접 컨설팅', description: '실전 모의면접을 통한 긍정적 이미지 메이킹' },
-  { step: '04', title: '연계기업 취업매칭', description: '에듀윌 인증 우수 연계 기업 매칭' },
+  { step: '04', title: '연계기업 취업매칭', description: '한국직업능력교육원 인증 우수 연계 기업 매칭' },
   { step: '05', title: '성공적인 취업/이직', description: '최적의 방향으로 컨설팅하여 취업 성공' },
 ];
 

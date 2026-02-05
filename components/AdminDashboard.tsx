@@ -114,7 +114,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({ onLogout }) => {
       <div className="w-full md:w-72 bg-zinc-950 border-r border-zinc-900 flex-shrink-0 flex flex-col">
         <div className="p-8 border-b border-zinc-900 flex justify-between items-center bg-zinc-950/50">
           <div>
-            <h1 className="text-xl font-black text-yellow-400 tracking-tighter">EDUWILL <span className="text-white">CMS</span></h1>
+            <h1 className="text-xl font-black text-yellow-400 tracking-tighter">HANJIKGYO <span className="text-white">CMS</span></h1>
             <p className="text-[10px] text-gray-500 font-bold uppercase tracking-widest mt-1">Content Management</p>
           </div>
           <button onClick={onLogout} className="p-2 text-gray-600 hover:text-red-500 transition-colors" title="로그아웃">

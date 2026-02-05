@@ -137,7 +137,7 @@ export const ExamSchedule: React.FC = () => {
           </h3>
           <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
             자격증 취득의 첫걸음은 정확한 일정 파악입니다.<br className="hidden md:block" />
-            에듀윌과 함께 완벽한 합격 플랜을 세워보세요.
+            한국직업능력교육원과 함께 완벽한 합격 플랜을 세워보세요.
           </p>
         </Reveal>
 

@@ -52,9 +52,9 @@ export const Navigation: React.FC = () => {
         <a 
           href="#" 
           onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}
-          className="text-2xl md:text-3xl font-black tracking-tighter text-white"
+          className="text-lg md:text-2xl font-black tracking-tighter text-white"
         >
-          <span className="text-yellow-400">Eduwill</span> 국비교육원
+          <span className="text-yellow-400">한국직업능력교육원</span> 안산
         </a>
 
         {/* Desktop Menu */}

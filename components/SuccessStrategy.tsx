@@ -44,7 +44,7 @@ export const SuccessStrategy: React.FC = () => {
             합격을 만드는 <span className="text-yellow-400">확실한 전략</span>
           </h3>
           <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
-            수많은 합격생들이 증명하는 에듀윌 국비교육원만의 합격 비결을 공개합니다.
+            수많은 합격생들이 증명하는 한국직업능력교육원 안산만의 합격 비결을 공개합니다.
           </p>
         </div>
 
