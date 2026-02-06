@@ -97,16 +97,16 @@ export const COURSES: Course[] = [
 ];
 
 export const EMPLOYMENT_STATUS: EmploymentStatus[] = [
-  { company: '한국화학융합시험연구원', name: '임OO', branch: '안산', license: '전기(산업)기사(실기)' },
-  { company: '(주)에스피씨삼립', name: '이OO', branch: '안산', license: '전기기능사(실기)' },
-  { company: '(주)예스쿨', name: '한OO', branch: '안산', license: '전기기능사(실기)' },
-  { company: '파트론', name: '노OO', branch: '안산', license: '전기(산업)기사(필기)' },
-  { company: '주식회사 가온전력', name: '송OO', branch: '안산', license: '전기기능사(실기)' },
-  { company: '서울시설공단', name: '정OO', branch: '안산', license: '전기기능사(필기+실기)' },
-  { company: '유한회사 오리스코리아', name: '박OO', branch: '안산', license: '전기(산업)기사(필기+실기)' },
-  { company: '대한전기안전관리아이캔', name: '조OO', branch: '안산', license: '전기(산업)기사(필기+실기)' },
-  { company: '주식회사 컴피아', name: '김OO', branch: '안산', license: '전기기능사(필기+실기)' },
-  { company: '(주)이랜드서비스', name: '정OO', branch: '안산', license: '전기(산업)기사(필기+실기)' },
+  { company: '엘옵틱스', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
+  { company: '플랜티팜', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
+  { company: '클래시스', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
+  { company: '에스지엔', name: '', branch: '', license: 'AI사물인터넷 MCU 임베디드 개발' },
+  { company: '케이사인', name: '', branch: '', license: 'DB보안솔루션(JAVA,C++) 개발' },
+  { company: '파우스', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
+  { company: '파인에스엔에스', name: '', branch: '', license: 'AI사물인터넷 MCU 임베디드 개발' },
+  { company: '알이디티', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
+  { company: '지그탑', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
+  { company: '솔루션링크', name: '', branch: '', license: '인공지능 기반 소프트웨어 개발' },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
