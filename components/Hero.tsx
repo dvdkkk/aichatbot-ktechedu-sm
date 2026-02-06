@@ -27,10 +27,10 @@ export const Hero: React.FC = () => {
       
       {/* Background Spline 3D Design - Moved behind the text */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#1a1a1a_0%,_#000000_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#000000_100%)]" />
         
-        {/* Spline Iframe as Background */}
-        <div className="absolute inset-0 opacity-60 md:opacity-80 scale-125 md:scale-110 pointer-events-none">
+        {/* Spline Iframe as Background - Adjusted size and position */}
+        <div className="absolute inset-0 opacity-60 md:opacity-80 scale-[0.6] md:scale-[0.55] -translate-y-24 md:-translate-y-32 pointer-events-none transition-all duration-1000">
            <iframe 
             src='https://my.spline.design/genkubgreetingrobot-wZzvYvqwHBprarK5vEX2Ngva/' 
             frameBorder='0' 
