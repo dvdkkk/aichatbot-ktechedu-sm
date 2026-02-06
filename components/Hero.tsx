@@ -24,19 +24,11 @@ export const Hero: React.FC = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
-      {/* Spline 3D Background */}
+      {/* Subtle Dark Background with Radial Gradient */}
       <div className="absolute inset-0 z-0">
-        <iframe 
-          src='https://my.spline.design/retrofuturisticcircuitloop-slaUZQa1nNOPcuJ6yjRHlM02/' 
-          frameBorder='0' 
-          width='100%' 
-          height='100%'
-          className="w-full h-full scale-105"
-          style={{ pointerEvents: 'none' }} // 3D 인터랙션 비활성화로 스크롤 방해 방지
-        />
-        {/* Dark Overlay for text readability */}
-        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,_#1a1a1a_0%,_#000000_100%)]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-yellow-400/5 rounded-full blur-[120px] pointer-events-none" />
+        <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent opacity-50" />
       </div>
 
       <div className="container mx-auto px-4 z-10 relative text-center">
