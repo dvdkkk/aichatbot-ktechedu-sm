@@ -1,4 +1,3 @@
-
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
 
 interface RevealProps {
@@ -66,19 +65,10 @@ export const VisionSection: React.FC = () => {
   return (
     <section id="vision" className="py-24 bg-black relative border-b border-zinc-900 overflow-hidden min-h-[800px] flex items-center">
       
-      {/* Background Spline 3D - Robot background positioned behind everything */}
-      <div className="absolute inset-0 z-0 pointer-events-none opacity-50 md:opacity-70 scale-110 md:scale-100">
-        <iframe 
-          src='https://my.spline.design/r4xbot-eCTpTa1vh2XLwYtBA3kwdXLQ/' 
-          frameBorder='0' 
-          width='100%' 
-          height='100%'
-          style={{ width: '100%', height: '100%', pointerEvents: 'none' }}
-          title="Background Robot"
-        ></iframe>
-        {/* Deep overlay to blend the 3D model with the dark theme and ensure text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none"></div>
-        <div className="absolute inset-0 bg-black/20 pointer-events-none"></div>
+      {/* Background Decoration (Robot removed as requested) */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_#1a1a1a_0%,_#000000_100%)] opacity-30"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black"></div>
       </div>
 
       <div className="container mx-auto px-4 flex flex-col items-center text-center relative z-10">
