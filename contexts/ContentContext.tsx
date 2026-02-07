@@ -9,10 +9,12 @@ const defaultContent: SiteContent = {
     highlight: "전기 전문가",
     description: "한국직업능력교육원 안산에서 전기기능사·전기(산업)기사 자격증 취득부터 실무 교육, 그리고 취업지원까지 한 번에 해결하십시오.",
     stats: [
-      { label: '교육비 지원', value: '국비지원' },
-      { label: '모집 정원', value: '각 20명' },
-      { label: '교육 장소', value: '안산' },
-      { label: '취업 지원', value: '1:1 매칭' },
+      { label: '모집여부', value: '모집 중' },
+      { label: '교육시간', value: '월~금 09:00~17:40' },
+      { label: '교육기간', value: '6개월 과정(122일)' },
+      { label: '수업형태', value: '오프라인 수업' },
+      { label: '기숙사', value: '사용 가능' },
+      { label: '선발방법', value: '문의 > 인터뷰 > 합격' },
     ]
   },
   intro: {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight, Star, Calendar, Clock, MapPin, Home, UserCheck, Flame } from 'lucide-react';
 import { useContent } from '../contexts/ContentContext';
 
 export const Hero: React.FC = () => {
@@ -22,14 +22,23 @@ export const Hero: React.FC = () => {
     }
   };
 
+  // Icon mapping for stats
+  const statIcons = [
+    <Flame size={16} className="text-red-500 animate-pulse" />,
+    <Clock size={16} className="text-yellow-400" />,
+    <Calendar size={16} className="text-yellow-400" />,
+    <MapPin size={16} className="text-yellow-400" />,
+    <Home size={16} className="text-yellow-400" />,
+    <UserCheck size={16} className="text-yellow-400" />,
+  ];
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
       
-      {/* Background Spline 3D Design - Moved behind the text */}
+      {/* Background Spline 3D Design */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#000000_100%)]" />
         
-        {/* Spline Iframe as Background - Adjusted position further up by 3 rows */}
         <div className="absolute inset-0 opacity-60 md:opacity-80 scale-[0.6] md:scale-[0.55] -translate-y-40 md:-translate-y-48 pointer-events-none transition-all duration-1000">
            <iframe 
             src='https://my.spline.design/genkubgreetingrobot-wZzvYvqwHBprarK5vEX2Ngva/' 
@@ -41,7 +50,6 @@ export const Hero: React.FC = () => {
           ></iframe>
         </div>
 
-        {/* Overlays for Text Readability */}
         <div className="absolute inset-0 bg-black/40 pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black pointer-events-none" />
         
@@ -66,7 +74,7 @@ export const Hero: React.FC = () => {
           {hero.description}
         </p>
 
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-16">
           <a 
             href="#consultation" 
             onClick={(e) => handleNavClick(e, '#consultation')}
@@ -84,11 +92,17 @@ export const Hero: React.FC = () => {
           </a>
         </div>
 
-        <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4 w-full border-t border-white/10 pt-8 bg-black/20 backdrop-blur-sm rounded-xl">
+        {/* Recruitment Info Grid (6 Items) */}
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 w-full border-t border-white/10 pt-10 bg-black/10 backdrop-blur-sm rounded-2xl">
           {hero.stats.map((stat, idx) => (
-            <div key={idx} className="text-center">
-              <p className="text-gray-500 text-xs mb-1 font-bold uppercase tracking-widest">{stat.label}</p>
-              <p className="text-lg md:text-2xl font-black text-white">{stat.value}</p>
+            <div key={idx} className="flex flex-col items-center justify-center p-4 rounded-xl bg-zinc-900/40 border border-white/5 hover:border-yellow-400/30 transition-colors group">
+              <div className="flex items-center gap-2 mb-2">
+                {statIcons[idx]}
+                <p className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest">{stat.label}</p>
+              </div>
+              <p className={`text-sm md:text-lg font-black break-keep ${stat.value === '모집 중' ? 'text-yellow-400' : 'text-white'}`}>
+                {stat.value}
+              </p>
             </div>
           ))}
         </div>
