@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
@@ -122,8 +121,8 @@ function AppContent() {
         <StatsSection />
         <HanjikgyoBenefits />
         <CourseSection />
-        <EmploymentSection />
         <EmploymentSupport />
+        <EmploymentSection />
         <ConsultationForm />
       </main>
       <FloatingCTA />
