@@ -1,27 +1,11 @@
 
 import React from 'react';
-import { ArrowRight, Star, Calendar, Clock, MapPin, Home, UserCheck, Flame, Cpu } from 'lucide-react';
+import { Star, Calendar, Clock, MapPin, Home, UserCheck, Flame, Cpu } from 'lucide-react';
 import { useContent } from '../contexts/ContentContext';
 
 export const Hero: React.FC = () => {
   const { content } = useContent();
   const { hero } = content;
-
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    e.preventDefault();
-    const targetId = href.replace('#', '');
-    const element = document.getElementById(targetId);
-    if (element) {
-      const headerOffset = 100;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
-
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
-    }
-  };
 
   // Icon mapping for stats (Recruitment Summary)
   const statIcons = [
@@ -75,26 +59,8 @@ export const Hero: React.FC = () => {
           {hero.description}
         </p>
 
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
-          <a 
-            href="#consultation" 
-            onClick={(e) => handleNavClick(e, '#consultation')}
-            className="group w-full md:w-auto px-8 py-4 bg-yellow-400 hover:bg-yellow-300 text-black text-lg font-black rounded-xl transition-all flex items-center justify-center gap-2 shadow-[0_0_25px_rgba(250,204,21,0.4)]"
-          >
-            국비지원 무료상담 신청하기
-            <ArrowRight size={22} className="group-hover:translate-x-1 transition-transform" />
-          </a>
-          <a 
-            href="#courses" 
-            onClick={(e) => handleNavClick(e, '#courses')}
-            className="w-full md:w-auto px-8 py-4 bg-zinc-900/80 backdrop-blur-md hover:bg-zinc-800 text-white text-lg font-bold rounded-xl transition-all border border-zinc-700 shadow-xl"
-          >
-            교육과정 자세히 보기
-          </a>
-        </div>
-
         {/* Course Title Plate (Added above the stats grid) */}
-        <div className="max-w-4xl mx-auto mb-8 animate-fade-in-up delay-300">
+        <div className="max-w-4xl mx-auto mb-12 animate-fade-in-up delay-300">
           <div className="relative p-6 md:p-8 rounded-2xl bg-zinc-900/60 backdrop-blur-xl border border-white/10 overflow-hidden group">
             {/* Background Accent */}
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-60"></div>
