@@ -24,7 +24,8 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#000000_100%)]" />
         
-        <div className="absolute inset-0 opacity-60 md:opacity-80 scale-[0.6] md:scale-[0.55] -translate-y-48 md:-translate-y-56 pointer-events-none transition-all duration-1000">
+        {/* Adjusted translate-y to move the robot up by approx 3 rows (48->72, 56->80) */}
+        <div className="absolute inset-0 opacity-60 md:opacity-80 scale-[0.6] md:scale-[0.55] -translate-y-72 md:-translate-y-80 pointer-events-none transition-all duration-1000">
            <iframe 
             src='https://my.spline.design/genkubgreetingrobot-wZzvYvqwHBprarK5vEX2Ngva/' 
             frameBorder='0' 
