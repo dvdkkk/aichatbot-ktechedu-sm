@@ -36,8 +36,8 @@ export const Navigation: React.FC = () => {
   const navLinks = [
     { name: '비전 & 혜택', href: '#vision' },
     { name: '과정소개', href: '#courses' },
-    { name: '취업지원', href: '#employment-support' },
     { name: '취업현황', href: '#employment' },
+    { name: '취업지원', href: '#employment-support' },
     { name: '상담신청', href: '#consultation' },
   ];
 

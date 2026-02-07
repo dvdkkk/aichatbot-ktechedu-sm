@@ -22,7 +22,7 @@ export const Hero: React.FC = () => {
     }
   };
 
-  // Icon mapping for stats
+  // Icon mapping for stats (Recruitment Summary)
   const statIcons = [
     <Flame size={16} className="text-red-500 animate-pulse" />,
     <Clock size={16} className="text-yellow-400" />,
@@ -39,7 +39,8 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#000000_100%)]" />
         
-        <div className="absolute inset-0 opacity-60 md:opacity-80 scale-[0.6] md:scale-[0.55] -translate-y-40 md:-translate-y-48 pointer-events-none transition-all duration-1000">
+        {/* Spline Position Adjusted Upwards (-translate-y-56) */}
+        <div className="absolute inset-0 opacity-60 md:opacity-80 scale-[0.6] md:scale-[0.55] -translate-y-48 md:-translate-y-56 pointer-events-none transition-all duration-1000">
            <iframe 
             src='https://my.spline.design/genkubgreetingrobot-wZzvYvqwHBprarK5vEX2Ngva/' 
             frameBorder='0' 
@@ -92,7 +93,7 @@ export const Hero: React.FC = () => {
           </a>
         </div>
 
-        {/* Recruitment Info Grid (6 Items) */}
+        {/* Recruitment Info Summary (6 Items) */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 w-full border-t border-white/10 pt-10 bg-black/10 backdrop-blur-sm rounded-2xl">
           {hero.stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col items-center justify-center p-4 rounded-xl bg-zinc-900/40 border border-white/5 hover:border-yellow-400/30 transition-colors group">

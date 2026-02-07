@@ -85,6 +85,10 @@ interface ContentContextType {
 
 const ContentContext = createContext<ContentContextType | undefined>(undefined);
 
+// 버전을 v2로 올려서 로컬 스토리지를 초기화 시킴
+const STORAGE_KEY = 'site_content_v2';
+const LOG_KEY = 'visitor_logs_v2';
+
 export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [content, setContent] = useState<SiteContent>(defaultContent);
   const [visitorLogs, setVisitorLogs] = useState<VisitorLog[]>([]);
@@ -92,7 +96,7 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
 
   useEffect(() => {
     // 사이트 콘텐츠 로드
-    const savedContent = localStorage.getItem('site_content_v1');
+    const savedContent = localStorage.getItem(STORAGE_KEY);
     if (savedContent) {
       try {
         const parsed = JSON.parse(savedContent);
@@ -103,7 +107,7 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
     }
 
     // 방문자 로그 로드
-    const savedLogs = localStorage.getItem('visitor_logs_v1');
+    const savedLogs = localStorage.getItem(LOG_KEY);
     if (savedLogs) {
       try {
         setVisitorLogs(JSON.parse(savedLogs));
@@ -117,7 +121,7 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
 
   const updateContent = (newContent: SiteContent) => {
     setContent(newContent);
-    localStorage.setItem('site_content_v1', JSON.stringify(newContent));
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(newContent));
   };
 
   const addVisitorLog = (logData: Omit<VisitorLog, 'id'>) => {
@@ -128,7 +132,7 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
     
     setVisitorLogs(prev => {
       const updated = [newLog, ...prev].slice(0, 500); // 최근 500개까지만 유지
-      localStorage.setItem('visitor_logs_v1', JSON.stringify(updated));
+      localStorage.setItem(LOG_KEY, JSON.stringify(updated));
       return updated;
     });
   };
@@ -136,7 +140,7 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
   const resetContent = () => {
     if (window.confirm("모든 변경사항을 초기화하시겠습니까?")) {
       setContent(defaultContent);
-      localStorage.removeItem('site_content_v1');
+      localStorage.removeItem(STORAGE_KEY);
     }
   };
 

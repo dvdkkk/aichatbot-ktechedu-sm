@@ -21,7 +21,7 @@ function VisitorTracker() {
 
   useEffect(() => {
     const trackVisitor = async () => {
-      const sessionKey = 'visitor_tracked_' + new Date().toISOString().split('T')[0];
+      const sessionKey = 'visitor_tracked_v2_' + new Date().toISOString().split('T')[0];
       if (sessionStorage.getItem(sessionKey)) return;
 
       try {
@@ -121,8 +121,8 @@ function AppContent() {
         <StatsSection />
         <HanjikgyoBenefits />
         <CourseSection />
-        <EmploymentSupport />
         <EmploymentSection />
+        <EmploymentSupport />
         <ConsultationForm />
       </main>
       <FloatingCTA />
