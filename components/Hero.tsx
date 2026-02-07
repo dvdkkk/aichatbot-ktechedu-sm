@@ -1,5 +1,6 @@
+
 import React from 'react';
-import { ArrowRight, Star, Calendar, Clock, MapPin, Home, UserCheck, Flame } from 'lucide-react';
+import { ArrowRight, Star, Calendar, Clock, MapPin, Home, UserCheck, Flame, Cpu } from 'lucide-react';
 import { useContent } from '../contexts/ContentContext';
 
 export const Hero: React.FC = () => {
@@ -39,7 +40,6 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#000000_100%)]" />
         
-        {/* Spline Position Adjusted Upwards (-translate-y-56) */}
         <div className="absolute inset-0 opacity-60 md:opacity-80 scale-[0.6] md:scale-[0.55] -translate-y-48 md:-translate-y-56 pointer-events-none transition-all duration-1000">
            <iframe 
             src='https://my.spline.design/genkubgreetingrobot-wZzvYvqwHBprarK5vEX2Ngva/' 
@@ -75,7 +75,7 @@ export const Hero: React.FC = () => {
           {hero.description}
         </p>
 
-        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-16">
+        <div className="flex flex-col md:flex-row gap-4 justify-center items-center mb-12">
           <a 
             href="#consultation" 
             onClick={(e) => handleNavClick(e, '#consultation')}
@@ -91,6 +91,31 @@ export const Hero: React.FC = () => {
           >
             교육과정 자세히 보기
           </a>
+        </div>
+
+        {/* Course Title Plate (Added above the stats grid) */}
+        <div className="max-w-4xl mx-auto mb-8 animate-fade-in-up delay-300">
+          <div className="relative p-6 md:p-8 rounded-2xl bg-zinc-900/60 backdrop-blur-xl border border-white/10 overflow-hidden group">
+            {/* Background Accent */}
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-60"></div>
+            <div className="absolute inset-0 bg-yellow-400/5 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            
+            <div className="flex flex-col items-center gap-3">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-yellow-500"></span>
+                </span>
+                <span className="text-[10px] md:text-xs font-black text-gray-500 uppercase tracking-[0.3em]">Official Course Name</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <Cpu className="text-yellow-400 hidden md:block" size={32} />
+                <h2 className="text-2xl md:text-4xl font-black text-white tracking-tighter">
+                  AI기반 <span className="text-yellow-400">인공지능 챗봇 개발</span>
+                </h2>
+              </div>
+            </div>
+          </div>
         </div>
 
         {/* Recruitment Info Summary (6 Items) */}

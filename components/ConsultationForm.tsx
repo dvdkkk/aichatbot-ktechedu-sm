@@ -158,7 +158,7 @@ export const ConsultationForm: React.FC = () => {
                   <form onSubmit={handleSubmit} className="space-y-2 md:space-y-3">
                   {/* IP 주소 및 메타데이터 */}
                   <input type="hidden" name="user_ip" value={ipAddress} />
-                  <input type="hidden" name="_subject" value="[신규 상담 신청] 한직교 AI 챗봇 개발 과정" />
+                  <input type="hidden" name="_subject" value="[신규 상담 신청] AI기반 인공지능 챗봇 개발" />
 
                   <h3 className="text-lg font-bold mb-2 md:mb-3 flex items-center gap-2">
                       빠른 교육상담 신청

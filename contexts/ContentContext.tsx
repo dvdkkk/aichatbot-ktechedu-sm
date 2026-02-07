@@ -1,13 +1,14 @@
+
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 import { SiteContent, VisitorLog } from '../types';
 import { COURSES, EMPLOYMENT_STATUS, PROCESS_STEPS } from '../constants';
 
 const defaultContent: SiteContent = {
   hero: {
-    badge: "취업잘되는 자격증 4위, 전기분야",
-    title: "미래를 밝히는 기술",
-    highlight: "전기 전문가",
-    description: "한국직업능력교육원 안산에서 전기기능사·전기(산업)기사 자격증 취득부터 실무 교육, 그리고 취업지원까지 한 번에 해결하십시오.",
+    badge: "국비지원 100% 무료 교육과정",
+    title: "미래를 여는 인공지능 기술",
+    highlight: "AI기반 인공지능 챗봇 개발",
+    description: "Python, Django, MariaDB를 활용하여 현업에서 즉시 사용 가능한 대화형 AI 시스템을 구축합니다. 한국직업능력교육원 안산에서 전문가로 거듭나세요.",
     stats: [
       { label: '모집여부', value: '모집 중' },
       { label: '교육시간', value: '월~금 09:00~17:40' },
@@ -22,51 +23,50 @@ const defaultContent: SiteContent = {
     title1: "전공·경력·나이에 상관없이",
     highlight: "‘할 수 있는 사람’",
     title2: "을 만들어냅니다",
-    description: "20대부터 50대까지, 성별과 전공을 넘어 다양한 수료생들이 지금 이 순간에도 현장에서 활약하고 있습니다.",
+    description: "20대부터 50대까지, 성별과 전공을 넘어 다양한 수료생들이 지금 이 순간에도 IT 현장에서 AI 개발자로 활약하고 있습니다.",
     images: [
-      "https://postfiles.pstatic.net/MjAyNjAxMjhfNjcg/MDAxNzY5NTcwMzIyMzU4.UKzP7PD7KQWFR-nsAPLOOMn2IcKW8b0N28YChdPLz0Yg.5qKMY9Fo1EdWSrwFm837mQFYckzrqxGD4XgIC23MvMMg.PNG/Gemini_Generated_Image_4spg6f4spg6f4spg.png?type=w466",
-      "https://postfiles.pstatic.net/MjAyNjAxMjhfMTgx/MDAxNzY5NTcwMzIyMzY4.nZmd95fkyvp32b9yIJ-1hIx0EpkTyaozkOuUx2fM8_0g.F_PTgpCDA4xlwDYEW5cx_wu1wHKOF6VyZwTc6FGsU-4g.PNG/Gemini_Generated_Image_hm87dchm87dchm87.png?type=w466",
-      "https://postfiles.pstatic.net/MjAyNjAxMjhfMTY2/MDAxNzY5NTcwMzIyMzYw.1_YtzWJjzPhvojxVFHzcvnSaSuke6m78x1ijUnykMDMg.TgXr-tKFDxHZxneRVjyzArXRSmMX00zoH0Pas_vjQ7wg.PNG/Gemini_Generated_Image_gxb5oigxb5oigxb5.png?type=w466",
-      "https://postfiles.pstatic.net/MjAyNjAxMjhfMzAw/MDAxNzY5NTcwMzIyMzQ5.J4AtHagzmy4V7wuSjIiU6Ozx8j4XLnVO1cE9Mi-J9r4g.MQBue43Js4oAA6M_aEA3BXYHDAhEZzyvm9Y8FzIT2Lgg.PNG/Gemini_Generated_Image_zwtxwzwtxwzwtxwz.png?type=w466"
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
     ]
   },
   vision: {
     items: [
-      { num: '01', title: '보수·승진 우대', desc: '기술직 공무원 및 기업체 보수나 승진에 있어 확실한 우대' },
-      { num: '02', title: '공기업 가산점', desc: '한국전력공사 등 주요 공기업 입사 지원 시 가산점 부여' },
-      { num: '03', title: '전기 관리직 수요', desc: '4차 산업 발전과 함께 꾸준히 수요가 늘어나는 전문직' },
-      { num: '04', title: '중장년층 취업 가능', desc: '나이 무관! 은퇴 없는 평생 직업으로 제2의 인생 시작' }
+      { num: '01', title: '고연봉 전문직', desc: 'AI 챗봇 및 머신러닝 기술력을 갖춘 개발자는 업계 최고의 대우' },
+      { num: '02', title: '전 산업 수요 폭발', desc: '유통, 금융, 제조 등 모든 분야에서 AI 도입 가속화로 구인난 심화' },
+      { num: '03', title: '평생 경력 자산', desc: '한번 익힌 로직과 데이터 사이언스 기술은 대체 불가능한 핵심 역량' },
+      { num: '04', title: '스타트업/창업 기회', desc: '자신만의 독창적인 AI 서비스를 개발하여 1인 창업 및 도약 가능' }
     ]
   },
   courses: COURSES,
   examSchedule: {
     technician: [
-      { round: "전기기능사 1회", writtenApp: "01.06 ~ 01.09", writtenExam: "01.20 ~ 02.02", writtenRes: "02.05", practicalApp: "03.09 ~ 03.12", practicalExam: "03.14 ~ 04.01", practicalRes: "04.10" },
-      { round: "전기기능사 2회", writtenApp: "03.09 ~ 03.12", writtenExam: "03.20 ~ 04.09", writtenRes: "04.30", practicalApp: "05.11 ~ 05.14", practicalExam: "05.30 ~ 06.14", practicalRes: "06.26" },
-      { round: "필기면제 검정", writtenApp: "-", writtenExam: "면제", writtenRes: "-", practicalApp: "05.11 ~ 05.14", practicalExam: "06.08 ~ 06.24", practicalRes: "07.15" },
-      { round: "전기기능사 3회", writtenApp: "06.08 ~ 06.11", writtenExam: "06.27 ~ 07.02", writtenRes: "07.10", practicalApp: "07.27 ~ 07.30", practicalExam: "08.24 ~ 09.16", practicalRes: "10.02" },
-      { round: "전기기능사 4회", writtenApp: "08.27 ~ 08.30", writtenExam: "09.21 ~ 10.15", writtenRes: "10.07", practicalApp: "10.12 ~ 10.15", practicalExam: "11.14 ~ 12.02", practicalRes: "12.11" },
+      { round: "정보처리기능사 1회", writtenApp: "01.06 ~ 01.09", writtenExam: "01.20 ~ 02.02", writtenRes: "02.05", practicalApp: "03.09 ~ 03.12", practicalExam: "03.14 ~ 04.01", practicalRes: "04.10" },
+      { round: "정보처리기능사 2회", writtenApp: "03.09 ~ 03.12", writtenExam: "03.20 ~ 04.09", writtenRes: "04.30", practicalApp: "05.11 ~ 05.14", practicalExam: "05.30 ~ 06.14", practicalRes: "06.26" },
+      { round: "정보처리기능사 3회", writtenApp: "06.08 ~ 06.11", writtenExam: "06.27 ~ 07.02", writtenRes: "07.10", practicalApp: "07.27 ~ 07.30", practicalExam: "08.24 ~ 09.16", practicalRes: "10.02" },
+      { round: "정보처리기능사 4회", writtenApp: "08.27 ~ 08.30", writtenExam: "09.21 ~ 10.15", writtenRes: "10.07", practicalApp: "10.12 ~ 10.15", practicalExam: "11.14 ~ 12.02", practicalRes: "12.11" },
     ],
     engineer: [
-      { round: "전기(산업)기사 1회", writtenApp: "01.12 ~ 01.15", writtenExam: "01.30 ~ 03.03", writtenRes: "03.11", practicalApp: "03.23 ~ 03.26", practicalExam: "04.18 ~ 05.06", practicalRes: "06.12" },
-      { round: "전기(산업)기사 2회", writtenApp: "04.20 ~ 04.23", writtenExam: "05.09 ~ 05.29", writtenRes: "06.10", practicalApp: "06.22 ~ 06.25", practicalExam: "07.18 ~ 08.05", practicalRes: "09.11" },
-      { round: "전기(산업)기사 3회", writtenApp: "07.20 ~ 07.23", writtenExam: "08.07 ~ 09.01", writtenRes: "09.09", practicalApp: "09.21 ~ 09.28", practicalExam: "10.24 ~ 11.13", practicalRes: "12.18" },
+      { round: "정보처리기사 1회", writtenApp: "01.12 ~ 01.15", writtenExam: "01.30 ~ 03.03", writtenRes: "03.11", practicalApp: "03.23 ~ 03.26", practicalExam: "04.18 ~ 05.06", practicalRes: "06.12" },
+      { round: "정보처리기사 2회", writtenApp: "04.20 ~ 04.23", writtenExam: "05.09 ~ 05.29", writtenRes: "06.10", practicalApp: "06.22 ~ 06.25", practicalExam: "07.18 ~ 08.05", practicalRes: "09.11" },
+      { round: "정보처리기사 3회", writtenApp: "07.20 ~ 07.23", writtenExam: "08.07 ~ 09.01", writtenRes: "09.09", practicalApp: "09.21 ~ 09.28", practicalExam: "10.24 ~ 11.13", practicalRes: "12.18" },
     ]
   },
   strategy: {
     items: [
-      { title: "핵심 위주의 고효율 커리큘럼", desc: "방대한 이론 중 시험에 꼭 나오는 핵심만 짚어드립니다. 단기간에 합격권 실력을 완성하는 완성도 높은 커리큘럼입니다." },
-      { title: "초보자 눈높이 맞춤 교육", desc: "생소한 용어와 수학 공식도 비전공자의 눈높이에서 알기 쉽게 설명합니다. 막연한 두려움을 자신감으로 바꿔드립니다." },
-      { title: "실전 중심의 완벽한 실기 대비", desc: "도면 해석부터 배관 배선까지 반복 훈련을 진행합니다. 초보자도 자연스럽게 도면을 보고 작업할 수 있는 수준으로 끌어올립니다." },
-      { title: "최적의 학습 환경과 지원", desc: "학습에만 집중할 수 있는 최고의 시설과 자재, 열정적인 강사진이 여러분의 합격을 끝까지 책임집니다." }
+      { title: "실전 프로젝트 중심 교육", desc: "이론에 그치지 않고 실제 대화형 챗봇을 기획하고 구현하여 포트폴리오를 완성합니다." },
+      { title: "비전공자 맞춤 코칭", desc: "복잡한 알고리즘도 쉽게! 파이썬 기초부터 차근차근 단계별로 실력을 향상시킵니다." },
+      { title: "최신 AI 트렌드 반영", desc: "OpenAI, Django, MariaDB 등 현업에서 가장 많이 쓰이는 기술 스택을 마스터합니다." },
+      { title: "1:1 취업 밀착 지원", desc: "자소서 첨삭부터 기술 면접 대비까지, IT 전문 취업 컨설턴트가 끝까지 동행합니다." }
     ],
     reviews: [
-      { name: "오OO님", text: "한국직업능력교육원의 환경과 시설 자재 모두 너무나 맘에 들었습니다. 선생님의 열정적인 강의 덕분에 시험 합격할 수 있었습니다.", tag: "최종합격" },
-      { name: "박OO님", text: "초심자여서 막연함과 생소한 용어, 수학 공식들로 인해 어려움이 있었지만, 선생님의 강의를 들으면 들을 수록 이해가 잘 되었습니다.", tag: "비전공자" },
-      { name: "최OO님", text: "실기에 초보에 가까웠던 제가 아주 자연스럽게 도면을 보고 배관배선을 하게 된 것을 보고 감탄하게 되었습니다.", tag: "실기합격" },
-      { name: "한OO님", text: "비교적 짧은 교육기간(2개월)에 비해 전기기능사자격취득을 위한 커리큘럼의 완성도가 높다고 판단됩니다.", tag: "단기합격" },
-      { name: "김OO님", text: "주요내용과 용어들이 처음에는 힘들었지만, 교육원의 좋은 학습분위기와 꽉찬 수업진행에 잘 적응하면서 용기와 자신감이 생겼습니다.", tag: "취업준비" },
-      { name: "정OO님", text: "처음 공부하는 시험인데 알기 쉽게 설명해주시면서 공부하기 쉽게 중요부분을 짚어주셔서 매우 좋았습니다.", tag: "필기합격" }
+      { name: "김OO님", text: "컴퓨터의 'ㅋ'자도 몰랐는데, 6개월 만에 제 챗봇을 웹에 배포했을 때의 감동을 잊을 수 없습니다.", tag: "비전공자" },
+      { name: "이OO님", text: "강사진이 현업 출신이라 그런지 실무 꿀팁을 정말 많이 배웠습니다. 취업 성공의 일등공신입니다.", tag: "최종합격" },
+      { name: "박OO님", text: "커리큘럼이 빡빡하지만 그만큼 얻어가는 게 많습니다. 포트폴리오 퀄리티가 남달라졌어요.", tag: "실무역량" },
+      { name: "최OO님", text: "국비지원이라 부담 없이 시작했는데, 80만원 수당 덕분에 공부에만 집중할 수 있었습니다.", tag: "경제적지원" },
+      { name: "한OO님", text: "IT 개발자로 전향하고 싶으신 분들께 강추합니다. 안산 최고의 AI 교육원입니다.", tag: "이직성공" },
+      { name: "정OO님", text: "혼자 공부할 때는 막막했는데 동료들과 프로젝트하며 성장하는 즐거움을 알게 되었습니다.", tag: "팀워크" }
     ]
   },
   employment: {
@@ -85,9 +85,9 @@ interface ContentContextType {
 
 const ContentContext = createContext<ContentContextType | undefined>(undefined);
 
-// 버전을 v2로 올려서 로컬 스토리지를 초기화 시킴
-const STORAGE_KEY = 'site_content_v2';
-const LOG_KEY = 'visitor_logs_v2';
+// 버전을 v5로 올려서 로컬 스토리지를 강제 갱신함
+const STORAGE_KEY = 'site_content_v5';
+const LOG_KEY = 'visitor_logs_v5';
 
 export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [content, setContent] = useState<SiteContent>(defaultContent);
@@ -95,7 +95,6 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // 사이트 콘텐츠 로드
     const savedContent = localStorage.getItem(STORAGE_KEY);
     if (savedContent) {
       try {
@@ -106,7 +105,6 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
       }
     }
 
-    // 방문자 로그 로드
     const savedLogs = localStorage.getItem(LOG_KEY);
     if (savedLogs) {
       try {
@@ -131,7 +129,7 @@ export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children })
     };
     
     setVisitorLogs(prev => {
-      const updated = [newLog, ...prev].slice(0, 500); // 최근 500개까지만 유지
+      const updated = [newLog, ...prev].slice(0, 500);
       localStorage.setItem(LOG_KEY, JSON.stringify(updated));
       return updated;
     });

@@ -1,127 +1,69 @@
+
 import { Course, EmploymentStatus, ProcessStep } from './types';
 
 export const COURSES: Course[] = [
   {
-    id: 'course-1',
+    id: 'course-ai-1',
     type: 'technician',
-    title: '[국비지원] 전기기능사 (필기+실기)',
-    subTitle: '전기 분야 입문의 필수 코스',
-    description: '전기기능사 자격증은 전기를 합리적으로 사용하고 전기로 인한 재해를 방지하기 위해 숙련된 기술인력을 양성하기 위한 국가기술자격제도입니다.',
-    duration: '2개월 or 4개월 ',
-    schedule: '매달 신규 개강',
-    classTime: '주5회(월~금) or 주2회(토,일)',
+    title: 'AI기반 인공지능 챗봇 개발',
+    subTitle: '미래 IT 산업의 핵심 기술 마스터',
+    description: 'Python, Django, MariaDB를 활용하여 실전에서 바로 사용 가능한 대화형 챗봇 시스템과 인공지능 플랫폼을 구축하는 실무 교육 과정입니다.',
+    duration: '6개월 과정(122일)',
+    schedule: '매달 신규 개강 예정',
+    classTime: '주5회(월~금) 09:00~17:40',
     capacity: '20명(오프라인)',
-    locations: '안산',
-    video: 'https://mblogvideo-phinf.pstatic.net/MjAyNjAxMjdfMTk1/MDAxNzY5NDk1MzA3NDU5.xDgtRREWWbuutZx7I6mWFwm059SbAaDVzpJCNl6qUUYg.UxLjnZDycE2w5gJLaztevGu5HUub5RmZEYsv0R_4ltEg.GIF/gif2.gif?type=mp4w800',
+    locations: '안산캠퍼스',
+    image: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2832&auto=format&fit=crop',
     curriculum: [
       {
-        category: '이론과정',
-        subjects: ['체계적인 개념정립', '핵심이론 압축정리']
+        category: '프로그래밍 기초',
+        subjects: ['Python 기초 문법', '제어문 및 함수', '객체지향 프로그래밍']
       },
       {
-        category: '문제풀이',
-        subjects: ['빈출문제 집중분석', '문제 응용력 향상']
+        category: '데이터베이스',
+        subjects: ['MariaDB 설치 및 환경설정', 'SQL 기초 및 심화', '데이터베이스 설계']
       },
       {
-        category: '기출분석',
-        subjects: ['과년도 기출분석', '출제 포인트 캐치']
+        category: '웹 프레임워크',
+        subjects: ['Django 기초 아키텍처', 'MTV 패턴의 이해', '웹 UI/UX 구현']
       },
       {
-        category: '실습강의',
-        subjects: ['실습 중심 강의', '실기까지 한번에!']
+        category: '인공지능 실무',
+        subjects: ['머신러닝 알고리즘 분석', '데이터 전처리 및 모델링', '예측 기능 구현']
       },
       {
-        category: '배관배선공사',
-        subjects: ['배선공사', '배관배선검사']
-      },
-      {
-        category: '전기기능사(이론)',
-        subjects: [
-          '전기이론: 정전기, 자기장, 직류/교류회로',
-          '전기기기: 변압기, 유도전동기, 정류기',
-          '전기설비: 옥내배선공사, 배전반 공사'
-        ]
-      },
-      {
-        category: '전기기능사(실기)',
-        subjects: [
-          '전기설비작업: 배관 배선하기',
-          '전기기계기구 설치',
-          '전동기제어 및 운용'
-        ]
-      }
-    ]
-  },
-  {
-    id: 'course-2',
-    type: 'engineer',
-    title: '[국비지원] 전기(산업)기사 (필기+실기)',
-    subTitle: '고소득 전문 기술인으로 도약',
-    description: '전기산업기사 자격증은 전기설비의 운전 및 조작, 유지·보수에 관한 전문화된 기술인력을 양성하고자 제정된 자격증입니다.',
-    duration: '2개월 or 4개월',
-    schedule: '매달 신규 개강',
-    classTime: '주5회(월~금) or 주2회(토,일)',
-    capacity: '20명(오프라인)',
-    locations: '안산',
-    video: 'https://mblogvideo-phinf.pstatic.net/MjAyNjAxMjdfOTMg/MDAxNzY5NDk1MzA3NDUx.Vy02fiUDugB02PVKMeGVScFNdWmt96WlVIH7J7AnQegg.WzAUEBNxXhoT9N0lKlNiSTuLvBUFEmft5UEAfzx_mZsg.GIF/gif1.gif?type=mp4w800',
-    
-    curriculum: [
-      {
-        category: '이론/문제/기출',
-        subjects: ['개념정립', '빈출문제 분석', '출제포인트 캐치']
-      },
-      {
-        category: '동력설비공사',
-        subjects: ['동력제어반공사', '동력설비 시운전']
-      },
-      {
-        category: '전기(산업)기사 이론',
-        subjects: [
-          '전기자기학: 전계, 자계, 전자유도',
-          '전력공학: 송배전선로, 계통보호방식',
-          '전기기기: 직류기, 동기기, 변압기',
-          '회로이론 및 제어공학: 라플라스 변환, 과도현상',
-          '설비기술기준: 전선로, 전력보안 통신설비'
-        ]
-      },
-      {
-        category: '전기(산업)기사 실기',
-        subjects: [
-          '전기설비설계 및 관리',
-          '자동제어 운용 및 유지관리',
-          '감리업무 수행계획 및 안전관리'
-        ]
+        category: '최종 프로젝트',
+        subjects: ['지능형 챗봇 앱 개발', 'DB 연동 및 서버 구축', 'AI 플랫폼 완성']
       }
     ]
   }
 ];
 
 export const EMPLOYMENT_STATUS: EmploymentStatus[] = [
-  { company: '엘옵틱스', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
-  { company: '플랜티팜', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
-  { company: '클래시스', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
-  { company: '에스지엔', name: '', branch: '', license: 'AI사물인터넷 MCU 임베디드 개발' },
-  { company: '케이사인', name: '', branch: '', license: 'DB보안솔루션(JAVA,C++) 개발' },
-  { company: '파우스', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
-  { company: '파인에스엔에스', name: '', branch: '', license: 'AI사물인터넷 MCU 임베디드 개발' },
-  { company: '알이디티', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
-  { company: '지그탑', name: '', branch: '', license: '영상AI(컴퓨터비전) 활용 IOT 개발' },
+  { company: '엘옵틱스', name: '', branch: '', license: 'AI기반 챗봇 및 웹 개발' },
+  { company: '플랜티팜', name: '', branch: '', license: '데이터 분석 및 AI 솔루션' },
+  { company: '클래시스', name: '', branch: '', license: '지능형 챗봇 시스템 구축' },
+  { company: '에스지엔', name: '', branch: '', license: 'Python 기반 AI 백엔드 개발' },
+  { company: '케이사인', name: '', branch: '', license: '보안 시스템 및 AI 연동' },
+  { company: '파우스', name: '', branch: '', license: '머신러닝 알고리즘 구현' },
+  { company: '파인에스엔에스', name: '', branch: '', license: '챗봇 UI/UX 및 프론트엔드' },
+  { company: '알이디티', name: '', branch: '', license: '데이터베이스 설계 및 관리' },
+  { company: '지그탑', name: '', branch: '', license: 'AI 플랫폼 운영 및 유지보수' },
   { company: '솔루션링크', name: '', branch: '', license: '인공지능 기반 소프트웨어 개발' },
 ];
 
 export const PROCESS_STEPS: ProcessStep[] = [
   { step: '01', title: '취업지원 컨설팅', description: '취업상담 신청 시 프로그램 설명 및 컨설팅 진행' },
-  { step: '02', title: '이력서·자소서 교육', description: '직무 성격에 맞는 1:1 맞춤 코칭 및 작성' },
+  { step: '02', title: '이력서·자소서 교육', description: 'IT 직무 성격에 맞는 1:1 맞춤 코칭 및 작성' },
   { step: '03', title: '모의면접 컨설팅', description: '실전 모의면접을 통한 긍정적 이미지 메이킹' },
-  { step: '04', title: '연계기업 취업매칭', description: '한국직업능력교육원 인증 우수 연계 기업 매칭' },
-  { step: '05', title: '성공적인 취업/이직', description: '최적의 방향으로 컨설팅하여 취업 성공' },
+  { step: '04', title: '연계기업 취업매칭', description: '한국직업능력교육원 인증 우수 협약 기업 매칭' },
+  { step: '05', title: '성공적인 취업/이직', description: '최적의 방향으로 컨설팅하여 AI 개발자 취업 성공' },
 ];
 
 export const TARGET_AUDIENCE = [
-  "나이가 많아서 취업이 어려우신 분",
-  "전기분야 고소득 관리직에 진출하고 싶은 분",
-  "한국전력공사로 취업이 목적인 분",
-  "전기기기 제조 업체에 재직 또는 취업 예정이신 분",
-  "전기기기 설비업체 관련 직종 및 전기실 관련 인력",
-  "전기기능사 자격증을 취득하여 취업하려는 구직자"
+  "IT 개발자로 커리어를 전환하고 싶은 비전공자",
+  "AI기반 인공지능 챗봇 개발 기술을 습득하여 경쟁력을 높이고 싶은 분",
+  "국비지원을 통해 교육비 부담 없이 전문가가 되고 싶은 분",
+  "실무 중심의 포트폴리오를 완성하여 고연봉 취업을 원하는 분",
+  "최신 AI 트렌드를 배우고 현업에 바로 투입되고 싶은 구직자"
 ];
