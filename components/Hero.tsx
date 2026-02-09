@@ -20,39 +20,19 @@ export const Hero: React.FC = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
       
-      {/* Background Spline 3D Design */}
-      <div className="absolute inset-0 z-0 bg-black">
+      {/* Background Layers (z-0) */}
+      <div className="absolute inset-0 z-0 bg-black pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#000000_100%)]" />
         
-        {/* Spline 3D Container with Position Adjustment & Vignette Mask */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-           <div 
-             className="w-full h-full md:w-[120%] md:h-[120%] transition-all duration-1000 opacity-90 scale-[0.8] md:scale-[0.85] translate-y-12 md:translate-y-24"
-             style={{
-               maskImage: 'radial-gradient(circle at 50% 50%, black 10%, transparent 55%)',
-               WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 10%, transparent 55%)'
-             }}
-           >
-             <iframe 
-              src='https://my.spline.design/genkubgreetingrobot-wZzvYvqwHBprarK5vEX2Ngva/' 
-              frameBorder='0' 
-              width='100%' 
-              height='100%'
-              style={{ width: '100%', height: '100%' }}
-              title="Hero Background Robot"
-            ></iframe>
-           </div>
-        </div>
-
-        {/* Dark Overlays for better text readability and atmosphere */}
-        <div className="absolute inset-0 bg-black/30 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] pointer-events-none" />
+        {/* Minimal Overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black" />
         
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-yellow-400/5 rounded-full blur-[120px] pointer-events-none" />
+        {/* Glow Effects */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-yellow-400/5 rounded-full blur-[120px]" />
         <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent opacity-50" />
       </div>
 
+      {/* Content (z-10) */}
       <div className="container mx-auto px-4 z-10 relative text-center">
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-yellow-400/10 border border-yellow-400/30 text-yellow-400 mb-6 animate-fade-in-up shadow-[0_0_20px_rgba(250,204,21,0.1)]">
           <Star size={14} fill="currentColor" />
@@ -70,7 +50,7 @@ export const Hero: React.FC = () => {
           {hero.description}
         </p>
 
-        {/* Course Title Plate (Added above the stats grid) */}
+        {/* Course Title Plate */}
         <div className="max-w-4xl mx-auto mb-12 animate-fade-in-up delay-300">
           <div className="relative p-6 md:p-8 rounded-2xl bg-zinc-900/60 backdrop-blur-xl border border-white/10 overflow-hidden group">
             {/* Background Accent */}
@@ -103,7 +83,7 @@ export const Hero: React.FC = () => {
                 {statIcons[idx]}
                 <p className="text-gray-500 text-[10px] md:text-xs font-bold uppercase tracking-widest">{stat.label}</p>
               </div>
-              <p className={`text-sm md:text-lg font-black break-keep ${stat.value === '모집 중' ? 'text-yellow-400' : 'text-white'}`}>
+              <p className={`text-sm md:text-lg font-black break-keep ${stat.value.includes('모집 중') ? 'text-yellow-400' : 'text-white'}`}>
                 {stat.value}
               </p>
             </div>
