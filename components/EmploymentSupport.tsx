@@ -88,7 +88,7 @@ export const EmploymentSupport: React.FC = () => {
         {/* Timeline Content */}
         <div className="relative pl-8 md:pl-32">
           {/* Vertical Line */}
-          <div className="absolute left-10 md:left-40 top-0 bottom-0 w-[1px] bg-zinc-800"></div>
+          <div className="absolute left-10 md:left-[82px] top-0 bottom-0 w-[1px] bg-zinc-800"></div>
 
           <div className="space-y-24">
             {steps.map((item, idx) => (
