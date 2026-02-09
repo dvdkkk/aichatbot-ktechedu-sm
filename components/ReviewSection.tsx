@@ -93,18 +93,23 @@ export const ReviewSection: React.FC = () => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // 자동 슬라이드 (4초마다 2개씩 이동)
+  // itemsPerView 변경 시 인덱스 리셋 (레이아웃 틀어짐 방지)
+  useEffect(() => {
+    setActiveIndex(0);
+  }, [itemsPerView]);
+
+  // 자동 슬라이드 (화면 크기에 따라 이동 개수 조정)
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => {
-        // 총 아이템 개수보다 인덱스가 커지면 0으로 초기화 (무한 루프 효과)
-        const nextIndex = prev + 2;
+        // itemsPerView만큼 이동 (모바일 1칸, PC 2칸)
+        const nextIndex = prev + itemsPerView;
         return nextIndex >= REVIEWS.length ? 0 : nextIndex;
       });
     }, 4000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [itemsPerView]);
 
   return (
     <section id="reviews" className="py-24 bg-black relative border-t border-zinc-900 overflow-hidden">
@@ -177,13 +182,13 @@ export const ReviewSection: React.FC = () => {
           
           {/* Slider Indicators */}
           <div className="flex justify-center gap-2 mt-10">
-            {Array.from({ length: Math.ceil(REVIEWS.length / 2) }).map((_, idx) => {
-               // 인덱스가 2개씩 증가하므로 indicator는 idx * 2와 비교
-               const isActive = Math.floor(activeIndex / 2) === idx;
+            {Array.from({ length: Math.ceil(REVIEWS.length / itemsPerView) }).map((_, idx) => {
+               // 현재 보고 있는 페이지 인덱스 계산
+               const isActive = Math.floor(activeIndex / itemsPerView) === idx;
                return (
                 <button
                     key={idx}
-                    onClick={() => setActiveIndex(idx * 2)}
+                    onClick={() => setActiveIndex(idx * itemsPerView)}
                     className={`h-1.5 rounded-full transition-all duration-300 ${
                     isActive ? 'w-8 bg-yellow-400' : 'w-2 bg-zinc-800 hover:bg-zinc-700'
                     }`}
