@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { Navigation } from './components/Navigation';
 import { Hero } from './components/Hero';
@@ -78,22 +79,9 @@ function AppContent() {
     
     checkRoute();
     window.addEventListener('hashchange', checkRoute);
-    
-    const handleContextMenu = (e: MouseEvent) => {
-      if (window.location.hash !== '#0107761') e.preventDefault();
-    };
-
-    const handleDragStart = (e: DragEvent) => {
-      if (window.location.hash !== '#0107761') e.preventDefault();
-    };
-
-    document.addEventListener('contextmenu', handleContextMenu);
-    document.addEventListener('dragstart', handleDragStart);
 
     return () => {
       window.removeEventListener('hashchange', checkRoute);
-      document.removeEventListener('contextmenu', handleContextMenu);
-      document.removeEventListener('dragstart', handleDragStart);
     };
   }, []);
 
