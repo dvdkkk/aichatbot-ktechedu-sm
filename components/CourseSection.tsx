@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
 import { BookOpen, Database, Smartphone, Brain, Rocket, CheckCircle2, Code2 } from 'lucide-react';
 
@@ -251,6 +252,7 @@ const CurriculumPhase: React.FC<{
             <img 
               src={image} 
               alt={title}
+              referrerPolicy="no-referrer"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 opacity-60 group-hover:opacity-100"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent p-8 flex flex-col justify-end">
