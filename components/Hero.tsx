@@ -21,23 +21,33 @@ export const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black pt-20">
       
       {/* Background Spline 3D Design */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 bg-black">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,#1a1a1a_0%,#000000_100%)]" />
         
-        {/* Adjusted translate-y to move the robot down by approx 1 row from previous position (72->64, 80->72) */}
-        <div className="absolute inset-0 opacity-60 md:opacity-80 scale-[0.6] md:scale-[0.55] -translate-y-64 md:-translate-y-72 pointer-events-none transition-all duration-1000">
-           <iframe 
-            src='https://my.spline.design/genkubgreetingrobot-wZzvYvqwHBprarK5vEX2Ngva/' 
-            frameBorder='0' 
-            width='100%' 
-            height='100%'
-            style={{ width: '100%', height: '100%' }}
-            title="Hero Background Robot"
-          ></iframe>
+        {/* Spline 3D Container with Position Adjustment & Vignette Mask */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+           <div 
+             className="w-full h-full md:w-[120%] md:h-[120%] transition-all duration-1000 opacity-90 scale-[0.8] md:scale-[0.85] translate-y-12 md:translate-y-24"
+             style={{
+               maskImage: 'radial-gradient(circle at 50% 50%, black 20%, transparent 65%)',
+               WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 20%, transparent 65%)'
+             }}
+           >
+             <iframe 
+              src='https://my.spline.design/genkubgreetingrobot-wZzvYvqwHBprarK5vEX2Ngva/' 
+              frameBorder='0' 
+              width='100%' 
+              height='100%'
+              style={{ width: '100%', height: '100%' }}
+              title="Hero Background Robot"
+            ></iframe>
+           </div>
         </div>
 
-        <div className="absolute inset-0 bg-black/40 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black pointer-events-none" />
+        {/* Dark Overlays for better text readability and atmosphere */}
+        <div className="absolute inset-0 bg-black/30 pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-black pointer-events-none" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,rgba(0,0,0,0.8)_100%)] pointer-events-none" />
         
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-yellow-400/5 rounded-full blur-[120px] pointer-events-none" />
         <div className="absolute bottom-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-zinc-800 to-transparent opacity-50" />
