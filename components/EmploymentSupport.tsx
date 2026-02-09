@@ -92,7 +92,7 @@ export const EmploymentSupport: React.FC = () => {
 
           <div className="space-y-24">
             {steps.map((item, idx) => (
-              <div key={idx} className="relative group">
+              <Reveal key={idx} delay={idx * 150} className="relative group">
                 
                 {/* Timeline Marker (Step text and dot) */}
                 <div className="absolute -left-10 md:-left-40 top-2 flex items-center w-32 md:w-40 justify-end pr-4 md:pr-10">
@@ -101,7 +101,7 @@ export const EmploymentSupport: React.FC = () => {
                 </div>
 
                 {/* Content Area */}
-                <Reveal delay={idx * 150}>
+                <div>
                    <span className="text-zinc-500 font-bold text-xs tracking-tighter mb-2 block md:hidden">{item.step}</span>
                    <div className="inline-block bg-zinc-900 border border-zinc-800 px-4 py-2 mb-6 rounded-lg hover:border-yellow-400/50 transition-colors">
                       <h3 className="text-white font-black text-xl md:text-2xl tracking-tight">
@@ -117,9 +117,8 @@ export const EmploymentSupport: React.FC = () => {
                         </li>
                       ))}
                    </ul>
-                </Reveal>
-
-              </div>
+                </div>
+              </Reveal>
             ))}
           </div>
         </div>

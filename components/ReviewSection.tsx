@@ -1,6 +1,44 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, ReactNode } from 'react';
 import { Star, Quote, MessageSquareQuote } from 'lucide-react';
+
+interface RevealProps {
+  children: ReactNode;
+  className?: string;
+  delay?: number;
+}
+
+const Reveal: React.FC<RevealProps> = ({ children, className = "", delay = 0 }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div
+      ref={ref}
+      className={`${className} transition-all duration-700 ease-out transform ${
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+      }`}
+      style={{ transitionDelay: `${delay}ms` }}
+    >
+      {children}
+    </div>
+  );
+};
 
 const REVIEWS = [
   {
@@ -75,7 +113,7 @@ export const ReviewSection: React.FC = () => {
 
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
+        <Reveal className="text-center mb-16">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-yellow-400 mb-4">
                 <MessageSquareQuote size={14} />
                 <span className="text-xs font-bold tracking-wide uppercase">Reviews</span>
@@ -86,10 +124,10 @@ export const ReviewSection: React.FC = () => {
             <p className="text-zinc-500 mt-4 text-sm">
                 실제 수강생들이 증명하는 한직교의 교육 퀄리티를 확인하세요.
             </p>
-        </div>
+        </Reveal>
 
         {/* Reviews Slider Container */}
-        <div className="relative max-w-6xl mx-auto overflow-hidden">
+        <Reveal delay={200} className="relative max-w-6xl mx-auto overflow-hidden">
           <div 
             className="flex transition-transform duration-700 ease-in-out"
             style={{ 
@@ -154,7 +192,7 @@ export const ReviewSection: React.FC = () => {
                );
             })}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

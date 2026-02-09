@@ -29,8 +29,8 @@ export const Hero: React.FC = () => {
            <div 
              className="w-full h-full md:w-[120%] md:h-[120%] transition-all duration-1000 opacity-90 scale-[0.8] md:scale-[0.85] translate-y-12 md:translate-y-24"
              style={{
-               maskImage: 'radial-gradient(circle at 50% 50%, black 20%, transparent 65%)',
-               WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 20%, transparent 65%)'
+               maskImage: 'radial-gradient(circle at 50% 50%, black 10%, transparent 55%)',
+               WebkitMaskImage: 'radial-gradient(circle at 50% 50%, black 10%, transparent 55%)'
              }}
            >
              <iframe 
