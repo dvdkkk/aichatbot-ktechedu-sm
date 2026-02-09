@@ -117,7 +117,7 @@ export const CourseSection: React.FC = () => {
                   { label: "그룹화 및 정렬", desc: "집계를 위한 함수 및 그룹화 방법 학습" },
                   { label: "보안 기초", desc: "계정 및 권한 관리" },
                   { label: "성능 최적화", desc: "index 개념, 실행 계획(Explain) 이해" },
-                  { label: "데이터베이스 설계", desc: "요구사항 수집, ERD 설계, 정규화" }
+              
                 ]
               }
             ]}
@@ -129,7 +129,7 @@ export const CourseSection: React.FC = () => {
             title="AI 챗봇 앱 개발"
             subtitle="Django를 활용하여 AI 챗봇 앱을 개발하고 MariaDB 연동"
             icon={Smartphone}
-            image="https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974&auto=format&fit=crop"
+            image="https://postfiles.pstatic.net/MjAyNjAyMDlfMTY1/MDAxNzcwNjEzMTgyNTcz.sqSYcYf_psJabOo51NQ96_ysTWbre290nrx0b3imBfkg.Lx9b_lKe7OgFaXx6p1SGm7Qpo1PdD49s70SJVGYqOfwg.JPEG/%ED%95%9C%EC%A7%81%EA%B5%90-%EC%B1%97%EB%B4%874.jpg?type=w966"
             projectTitle="AI 챗봇 UI 구성과 앱 개발 및 구동"
             steps={[
               {
@@ -145,8 +145,8 @@ export const CourseSection: React.FC = () => {
                 title: "STEP 2 심화",
                 items: [
                   { label: "데이터 처리/비즈니스 로직", desc: "ORM을 활용한 복합 쿼리 처리 및 트랜잭션 적용" },
-                  { label: "사용자 인증 및 권한", desc: "로그인 / 로그아웃 및 인증 시스템 구현" },
-                  { label: "웹 애플리케이션 통합", desc: "외부 API연동, 세션 / 쿠키 처리" },
+                  { label: "사용자 인증 및 권한관리", desc: "로그인 / 로그아웃 및 인증 시스템 구현" },
+                  { label: "웹 애플리케이션 통합기능", desc: "외부 API연동, 세션 / 쿠키 처리" },
                   { label: "테스트 및 배포 기초", desc: "Django TestCase 기반 테스트 및 결함 수정" }
                 ]
               }
@@ -156,7 +156,7 @@ export const CourseSection: React.FC = () => {
           {/* Phase 4 */}
           <CurriculumPhase 
             phase="PHASE 4"
-            title="인공지능 플랫폼 개발"
+            title="인공지능 플랫폼 개발 및 구현"
             subtitle="데이터 통계를 기반으로 한 AI 챗봇의 예측 기능 구현"
             icon={Brain}
             image="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2832&auto=format&fit=crop"
@@ -190,7 +190,7 @@ export const CourseSection: React.FC = () => {
                <div className="text-center mb-12 relative z-10">
                  <div className="inline-block bg-yellow-400 text-black font-black px-4 py-1 rounded-full text-sm mb-4">PHASE 5</div>
                  <h3 className="text-4xl md:text-5xl font-black text-white mb-4">최종 프로젝트 <span className="text-yellow-400">(AI 챗봇 구동)</span></h3>
-                 <p className="text-gray-400">수강생 개인의 AI 챗봇을 개발하고 포트폴리오를 완성합니다.</p>
+                 <p className="text-gray-400">AI 챗봇을 개발하고 포트폴리오를 완성합니다.</p>
                </div>
 
                <div className="grid lg:grid-cols-3 gap-6 relative z-10">

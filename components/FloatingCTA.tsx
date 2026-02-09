@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 
 export const FloatingCTA: React.FC = () => {
@@ -42,9 +43,9 @@ export const FloatingCTA: React.FC = () => {
         href="#consultation" 
         onClick={handleClick}
         className="pointer-events-auto bg-yellow-400 hover:bg-yellow-300 text-black font-bold text-sm w-16 h-16 rounded-full shadow-[0_4px_15px_rgba(250,204,21,0.4)] flex items-center justify-center transition-transform hover:scale-110 active:scale-95"
-        aria-label="상담 신청하기"
+        aria-label="문의 신청하기"
       >
-        상담
+        문의
       </a>
     </div>
   );

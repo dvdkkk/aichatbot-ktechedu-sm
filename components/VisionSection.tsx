@@ -1,4 +1,6 @@
+
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
+import { Eye } from 'lucide-react';
 
 interface RevealProps {
   children: ReactNode;
@@ -63,7 +65,7 @@ export const VisionSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="vision" className="py-24 bg-black relative border-b border-zinc-900 overflow-hidden min-h-[800px] flex items-center">
+    <section id="vision" className="py-24 bg-black relative border-b border-zinc-900 overflow-hidden min-h-[800px] flex flex-col justify-center">
       
       {/* Background Decoration (Robot removed as requested) */}
       <div className="absolute inset-0 z-0 pointer-events-none">
@@ -74,11 +76,18 @@ export const VisionSection: React.FC = () => {
       <div className="container mx-auto px-4 flex flex-col items-center text-center relative z-10">
         
         {/* Header Section */}
-        <Reveal className="mb-8">
+        <Reveal className="mb-12">
+           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-yellow-400 mb-4">
+              <Eye size={14} />
+              <span className="text-xs font-bold tracking-wide uppercase">Vision</span>
+           </div>
           <h2 className="text-3xl md:text-5xl font-black text-white leading-tight drop-shadow-[0_4px_12px_rgba(0,0,0,0.9)]">
             모든 기업이 원하는 AI 챗봇,<br />
             <span className="text-yellow-400">자체 개발자로 고연봉 취업!</span>
           </h2>
+           <p className="text-zinc-500 mt-4 text-sm">
+             미래 산업의 핵심 인재로 성장할 수 있는 확실한 비전을 제시합니다.
+           </p>
         </Reveal>
 
         {/* Separator Dots */}

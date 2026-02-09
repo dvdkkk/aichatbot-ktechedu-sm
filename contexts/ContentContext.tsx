@@ -5,14 +5,14 @@ import { COURSES, EMPLOYMENT_STATUS, PROCESS_STEPS } from '../constants';
 
 const defaultContent: SiteContent = {
   hero: {
-    badge: "국비지원 100% 무료 교육과정",
+    badge: "AI 미래유망직종 1위",
     title: "미래를 여는 인공지능 기술",
     highlight: "AI기반 인공지능 챗봇 개발",
-    description: "Python, Django, MariaDB를 활용하여 현업에서 즉시 사용 가능한 대화형 AI 시스템을 구축합니다. 한국직업능력교육원 안산에서 전문가로 거듭나세요.",
+    description: "실전에서 바로 사용 가능한 대화형 챗봇 시스템과 인공지능 플랫폼을 구축하는 실무 교육 과정입니다. 한국직업능력교육원에서 AI챗봇 개발 전문가로 거듭나세요.",
     stats: [
-      { label: '모집여부', value: '모집 중' },
+      { label: '모집여부', value: '모집 중(6개월과정)' },
       { label: '교육시간', value: '월~금 09:00~17:40' },
-      { label: '교육기간', value: '6개월 과정(122일)' },
+      { label: '수강료', value: '95~100% 국비지원' },
       { label: '수업형태', value: '오프라인 수업' },
       { label: '기숙사', value: '사용 가능' },
       { label: '선발방법', value: '문의 > 인터뷰 > 합격' },
@@ -20,15 +20,15 @@ const defaultContent: SiteContent = {
   },
   intro: {
     badge: "Education Mission",
-    title1: "전공·경력·나이에 상관없이",
+    title1: "전공·경력·성별 상관없이",
     highlight: "‘할 수 있는 사람’",
     title2: "을 만들어냅니다",
-    description: "20대부터 50대까지, 성별과 전공을 넘어 다양한 수료생들이 지금 이 순간에도 IT 현장에서 AI 개발자로 활약하고 있습니다.",
+    description: "성별과 전공을 넘어 다양한 수료생들이 지금 이 순간에도 IT 현장에서 AI 개발자로 활약하고 있습니다.",
     images: [
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop"
+      "https://postfiles.pstatic.net/MjAyNjAyMDdfMTI5/MDAxNzcwNDczMzk4MzM5.j6rX1bGlkkwNbV77txNgK14lBHAYbiKYfjFpgFzk1RAg.WXfNRwdBQeh3Zhcovjw_scv8iSDnJAuGWqby2eYoZvQg.JPEG/grok%EF%BC%BFimage%EF%BC%BF1770466544356.jpg?type=w966",
+      "https://postfiles.pstatic.net/MjAyNjAyMDdfMjI5/MDAxNzcwNDczMzk5OTE3.zw8tAXItIlc5CRfOO4Q5suU3s0dKbyxIM49ParhCvqQg.I1bS28bnL015uE1pv3IkM5ToKsiZLT1XO7W_3L0UYV8g.JPEG/grok%EF%BC%BFimage%EF%BC%BF1770469035959.jpg?type=w966",
+      "https://postfiles.pstatic.net/MjAyNjAyMDdfNTMg/MDAxNzcwNDczMzk3NjA4.oSduxbDJ8lN2Rj54VF-pvaOKz3yoxorBpC5fdpO3qVIg.eipwPaOlxxF2j76bRk7vW_Uk_HJ1_mD0P1LOq2W3mP0g.JPEG/grok%EF%BC%BFimage%EF%BC%BF1770469319485.jpg?type=w966",
+      "https://postfiles.pstatic.net/MjAyNjAyMDdfMTU2/MDAxNzcwNDczMzk5MTU0.dwY7j_8HCvh85ssKo5vCmDSdfa2ynn8h6P6zSLm60lkg.CRWZXZGGUt_mnKEyLxg7F1WcWjGN1uCGMrNat_zRoy8g.JPEG/grok%EF%BC%BFimage%EF%BC%BF1770469274109.jpg?type=w966"
     ]
   },
   vision: {
@@ -42,15 +42,15 @@ const defaultContent: SiteContent = {
   courses: COURSES,
   examSchedule: {
     technician: [
-      { round: "정보처리기능사 1회", writtenApp: "01.06 ~ 01.09", writtenExam: "01.20 ~ 02.02", writtenRes: "02.05", practicalApp: "03.09 ~ 03.12", practicalExam: "03.14 ~ 04.01", practicalRes: "04.10" },
-      { round: "정보처리기능사 2회", writtenApp: "03.09 ~ 03.12", writtenExam: "03.20 ~ 04.09", writtenRes: "04.30", practicalApp: "05.11 ~ 05.14", practicalExam: "05.30 ~ 06.14", practicalRes: "06.26" },
-      { round: "정보처리기능사 3회", writtenApp: "06.08 ~ 06.11", writtenExam: "06.27 ~ 07.02", writtenRes: "07.10", practicalApp: "07.27 ~ 07.30", practicalExam: "08.24 ~ 09.16", practicalRes: "10.02" },
-      { round: "정보처리기능사 4회", writtenApp: "08.27 ~ 08.30", writtenExam: "09.21 ~ 10.15", writtenRes: "10.07", practicalApp: "10.12 ~ 10.15", practicalExam: "11.14 ~ 12.02", practicalRes: "12.11" },
+      { round: '1회', writtenApp: '1.13 ~ 1.16', writtenExam: '1.25 ~ 2.3', writtenRes: '2.26', practicalApp: '3.2 ~ 3.5', practicalExam: '3.22 ~ 4.4', practicalRes: '4.18' },
+      { round: '2회', writtenApp: '3.10 ~ 3.13', writtenExam: '3.22 ~ 4.4', writtenRes: '4.18', practicalApp: '5.12 ~ 5.15', practicalExam: '6.1 ~ 6.14', practicalRes: '6.27' },
+      { round: '3회', writtenApp: '5.19 ~ 5.22', writtenExam: '6.15 ~ 6.21', writtenRes: '7.4', practicalApp: '7.21 ~ 7.24', practicalExam: '8.16 ~ 8.29', practicalRes: '9.12' },
+      { round: '4회', writtenApp: '8.25 ~ 8.28', writtenExam: '9.20 ~ 10.5', writtenRes: '10.17', practicalApp: '10.20 ~ 10.23', practicalExam: '11.15 ~ 11.28', practicalRes: '12.12' }
     ],
     engineer: [
-      { round: "정보처리기사 1회", writtenApp: "01.12 ~ 01.15", writtenExam: "01.30 ~ 03.03", writtenRes: "03.11", practicalApp: "03.23 ~ 03.26", practicalExam: "04.18 ~ 05.06", practicalRes: "06.12" },
-      { round: "정보처리기사 2회", writtenApp: "04.20 ~ 04.23", writtenExam: "05.09 ~ 05.29", writtenRes: "06.10", practicalApp: "06.22 ~ 06.25", practicalExam: "07.18 ~ 08.05", practicalRes: "09.11" },
-      { round: "정보처리기사 3회", writtenApp: "07.20 ~ 07.23", writtenExam: "08.07 ~ 09.01", writtenRes: "09.09", practicalApp: "09.21 ~ 09.28", practicalExam: "10.24 ~ 11.13", practicalRes: "12.18" },
+      { round: '1회', writtenApp: '1.13 ~ 1.16', writtenExam: '2.2 ~ 2.22', writtenRes: '3.12', practicalApp: '3.24 ~ 3.27', practicalExam: '4.19 ~ 5.2', practicalRes: '6.13' },
+      { round: '2회', writtenApp: '4.14 ~ 4.17', writtenExam: '5.10 ~ 5.25', writtenRes: '6.11', practicalApp: '6.30 ~ 7.3', practicalExam: '7.26 ~ 8.13', practicalRes: '9.12' },
+      { round: '3회', writtenApp: '6.9 ~ 6.12', writtenExam: '7.5 ~ 7.27', writtenRes: '8.6', practicalApp: '9.8 ~ 9.11', practicalExam: '10.11 ~ 10.26', practicalRes: '11.14' }
     ]
   },
   strategy: {
@@ -85,9 +85,9 @@ interface ContentContextType {
 
 const ContentContext = createContext<ContentContextType | undefined>(undefined);
 
-// 버전을 v5로 올려서 로컬 스토리지를 강제 갱신함
-const STORAGE_KEY = 'site_content_v5';
-const LOG_KEY = 'visitor_logs_v5';
+// 버전을 v7로 올려서 로컬 스토리지를 강제 갱신함
+const STORAGE_KEY = 'site_content_v7';
+const LOG_KEY = 'visitor_logs_v7';
 
 export const ContentProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [content, setContent] = useState<SiteContent>(defaultContent);

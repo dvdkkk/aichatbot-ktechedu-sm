@@ -1,5 +1,6 @@
 
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
+import { Briefcase } from 'lucide-react';
 
 interface RevealProps {
   children: ReactNode;
@@ -70,11 +71,17 @@ export const EmploymentSupport: React.FC = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <Reveal>
-            <span className="text-[#a855f7] font-bold text-lg mb-4 block">취업지원</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-yellow-400 mb-4">
+                <Briefcase size={14} />
+                <span className="text-xs font-bold tracking-wide uppercase">Employment Support</span>
+            </div>
             <h2 className="text-3xl md:text-5xl font-black text-white leading-tight break-keep">
               수료 후까지 이어지는<br />
-              취업지원시스템
+              <span className="text-yellow-400">취업지원시스템</span>
             </h2>
+            <p className="text-zinc-500 mt-4 text-sm">
+                체계적인 1:1 맞춤형 컨설팅으로 여러분의 취업 성공을 끝까지 지원합니다.
+            </p>
           </Reveal>
         </div>
 
@@ -90,13 +97,13 @@ export const EmploymentSupport: React.FC = () => {
                 {/* Timeline Marker (Step text and dot) */}
                 <div className="absolute -left-10 md:-left-40 top-2 flex items-center w-32 md:w-40 justify-end pr-4 md:pr-10">
                   <span className="text-zinc-500 font-bold text-sm tracking-tighter mr-4 hidden md:block">{item.step}</span>
-                  <div className="w-3 h-3 rounded-full bg-[#a855f7] shadow-[0_0_10px_rgba(168,85,247,0.5)] z-10 transition-transform duration-300 group-hover:scale-125"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-400 shadow-[0_0_10px_rgba(250,204,21,0.5)] z-10 transition-transform duration-300 group-hover:scale-125"></div>
                 </div>
 
                 {/* Content Area */}
                 <Reveal delay={idx * 150}>
                    <span className="text-zinc-500 font-bold text-xs tracking-tighter mb-2 block md:hidden">{item.step}</span>
-                   <div className="inline-block bg-[#a855f7] px-4 py-2 mb-6">
+                   <div className="inline-block bg-zinc-900 border border-zinc-800 px-4 py-2 mb-6 rounded-lg hover:border-yellow-400/50 transition-colors">
                       <h3 className="text-white font-black text-xl md:text-2xl tracking-tight">
                         {item.title}
                       </h3>
@@ -105,7 +112,7 @@ export const EmploymentSupport: React.FC = () => {
                    <ul className="space-y-3">
                       {item.items.map((li, i) => (
                         <li key={i} className="flex items-center gap-3 text-zinc-400 font-medium md:text-lg">
-                          <span className="w-1.5 h-1.5 rounded-full bg-zinc-700"></span>
+                          <span className="w-1.5 h-1.5 rounded-full bg-yellow-400"></span>
                           {li}
                         </li>
                       ))}
@@ -120,7 +127,7 @@ export const EmploymentSupport: React.FC = () => {
       </div>
 
       {/* Background Decor */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/5 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-yellow-400/5 rounded-full blur-[120px] pointer-events-none"></div>
     </section>
   );
 };

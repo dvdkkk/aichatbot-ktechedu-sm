@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 import { Users, Zap, Target } from 'lucide-react';
 import { useContent } from '../contexts/ContentContext';
@@ -78,7 +79,7 @@ export const IntroSection: React.FC = () => {
                   src={src} 
                   alt={`교육 현장 사진 ${index + 1}`} 
                   referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 filter grayscale group-hover:grayscale-0"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-yellow-400/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-50"></div>
@@ -92,8 +93,8 @@ export const IntroSection: React.FC = () => {
               <div className="w-12 h-12 bg-zinc-800 rounded-2xl flex items-center justify-center text-white mb-4 group-hover:bg-yellow-400 group-hover:text-black transition-colors shadow-lg">
                 <Users size={24} />
               </div>
-              <h3 className="text-white font-bold text-lg mb-2">나이 무관</h3>
-              <p className="text-zinc-500 text-sm leading-relaxed">20대 취업준비생부터 50대 재취업 희망자까지 모두 가능합니다.</p>
+              <h3 className="text-white font-bold text-lg mb-2">경력 무관</h3>
+              <p className="text-zinc-500 text-sm leading-relaxed">경력상관없이 기술을 배워서 AI개발 직무로 진출이 가능합니다.</p>
             </div>
             <div className="bg-zinc-900/50 border border-zinc-800 p-8 rounded-3xl hover:border-yellow-400/30 transition-colors group backdrop-blur-sm">
               <div className="w-12 h-12 bg-zinc-800 rounded-2xl flex items-center justify-center text-white mb-4 group-hover:bg-yellow-400 group-hover:text-black transition-colors shadow-lg">
@@ -106,8 +107,8 @@ export const IntroSection: React.FC = () => {
               <div className="w-12 h-12 bg-zinc-800 rounded-2xl flex items-center justify-center text-white mb-4 group-hover:bg-yellow-400 group-hover:text-black transition-colors shadow-lg">
                 <Zap size={24} />
               </div>
-              <h3 className="text-white font-bold text-lg mb-2">자격증 + 실무</h3>
-              <p className="text-zinc-500 text-sm leading-relaxed">자격증 취득은 물론 실무 중심 교육으로 즉시 현장 투입이 가능합니다.</p>
+              <h3 className="text-white font-bold text-lg mb-2">실무중심</h3>
+              <p className="text-zinc-500 text-sm leading-relaxed"> 실무 중심 교육으로 즉시 현장 투입이 가능합니다.</p>
             </div>
           </div>
 

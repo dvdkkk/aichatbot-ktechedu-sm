@@ -7,7 +7,7 @@ export const COURSES: Course[] = [
     type: 'technician',
     title: 'AI기반 인공지능 챗봇 개발',
     subTitle: '미래 IT 산업의 핵심 기술 마스터',
-    description: 'Python, Django, MariaDB를 활용하여 실전에서 바로 사용 가능한 대화형 챗봇 시스템과 인공지능 플랫폼을 구축하는 실무 교육 과정입니다.',
+    description: '실전에서 바로 사용 가능한 대화형 챗봇 시스템과 인공지능 플랫폼을 구축하는 실무 교육 과정입니다. 한국직업능력교육원에서 AI챗봇 개발 전문가로 거듭나세요.',
     duration: '6개월 과정(122일)',
     schedule: '매달 신규 개강 예정',
     classTime: '주5회(월~금) 09:00~17:40',

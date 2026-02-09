@@ -6,6 +6,7 @@ import { IntroSection } from './components/IntroSection';
 import { CourseSection } from './components/CourseSection';
 import { VisionSection } from './components/VisionSection';
 import { StatsSection } from './components/StatsSection';
+import { ReviewSection } from './components/ReviewSection';
 import { EmploymentSection } from './components/EmploymentSection';
 import { ConsultationForm } from './components/ConsultationForm';
 import { Footer } from './components/Footer';
@@ -109,8 +110,9 @@ function AppContent() {
         <StatsSection />
         <HanjikgyoBenefits />
         <CourseSection />
-        <EmploymentSection />
         <EmploymentSupport />
+        <EmploymentSection />
+        <ReviewSection />
         <ConsultationForm />
       </main>
       <FloatingCTA />

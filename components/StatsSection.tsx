@@ -1,5 +1,6 @@
 
 import React, { useState, useEffect, useRef, ReactNode } from 'react';
+import { TrendingUp } from 'lucide-react';
 
 interface CountUpProps {
   end: number;
@@ -96,30 +97,33 @@ export const StatsSection: React.FC = () => {
   return (
     <section className="py-32 bg-[#1a1a1e] relative overflow-hidden flex flex-col items-center justify-center text-center">
       {/* Background Glows */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-yellow-400/5 rounded-full blur-[120px] pointer-events-none"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         
-        <Reveal className="mb-4">
-          <span className="text-[#a855f7] font-bold text-lg md:text-xl">왜 한직교일까?</span>
-        </Reveal>
-
-        <Reveal delay={200} className="mb-24">
+        <Reveal className="mb-24">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-yellow-400 mb-4">
+              <TrendingUp size={14} />
+              <span className="text-xs font-bold tracking-wide uppercase">왜 한직교인가?</span>
+          </div>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white leading-tight">
             숫자가 말해주는<br />
-            한직교 실력
+            <span className="text-yellow-400">한직교 실력</span>
           </h2>
+          <p className="text-zinc-500 mt-4 text-sm">
+            압도적인 성과로 증명하는 대한민국 대표 직업능력교육원
+          </p>
         </Reveal>
 
         <div className="space-y-32">
           {/* Stat 1: Graduates */}
           <div className="group">
-            <Reveal delay={400} className="mb-4">
-              <div className="text-white text-7xl md:text-[120px] font-black tracking-tighter drop-shadow-[0_0_30px_rgba(168,85,247,0.4)]">
+            <Reveal delay={200} className="mb-4">
+              <div className="text-white text-7xl md:text-[120px] font-black tracking-tighter drop-shadow-[0_0_30px_rgba(250,204,21,0.2)]">
                 <CountUp end={2538} suffix="명" separator={true} />
               </div>
             </Reveal>
-            <Reveal delay={500} className="space-y-2">
+            <Reveal delay={300} className="space-y-2">
               <h3 className="text-2xl md:text-3xl font-bold text-white">AI 교육 수료생</h3>
               <p className="text-zinc-500 text-sm md:text-base font-medium">한국직업능력교육원 AI 교육 수료생</p>
             </Reveal>
@@ -127,12 +131,12 @@ export const StatsSection: React.FC = () => {
 
           {/* Stat 2: Salary */}
           <div className="group">
-            <Reveal delay={600} className="mb-4">
-              <div className="text-white text-7xl md:text-[120px] font-black tracking-tighter drop-shadow-[0_0_30px_rgba(168,85,247,0.4)]">
+            <Reveal delay={400} className="mb-4">
+              <div className="text-white text-7xl md:text-[120px] font-black tracking-tighter drop-shadow-[0_0_30px_rgba(250,204,21,0.2)]">
                 <CountUp end={3900} suffix="만원" separator={true} />
               </div>
             </Reveal>
-            <Reveal delay={700} className="space-y-2">
+            <Reveal delay={500} className="space-y-2">
               <h3 className="text-2xl md:text-3xl font-bold text-white">AI 과정 수료생 평균 연봉</h3>
               <p className="text-zinc-500 text-sm md:text-base font-medium">한직교 취업전담팀</p>
             </Reveal>

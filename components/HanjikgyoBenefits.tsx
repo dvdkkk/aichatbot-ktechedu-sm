@@ -1,5 +1,6 @@
+
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
-import { CreditCard, Banknote, Home, Handshake, Briefcase } from 'lucide-react';
+import { CreditCard, Handshake, Briefcase, Gift } from 'lucide-react';
 
 interface RevealProps {
   children: ReactNode;
@@ -127,13 +128,21 @@ export const HanjikgyoBenefits: React.FC = () => {
       <div className="container mx-auto px-4 max-w-7xl">
         
         {/* Header */}
-        <Reveal className="mb-20 text-center">
-          <span className="text-[#a855f7] font-bold text-lg mb-4 block">한직교 혜택</span>
-          <h2 className="text-3xl md:text-5xl font-black text-white leading-tight break-keep">
-            수강생의 성장을 위한<br />
-            한직교 맞춤 혜택
-          </h2>
-        </Reveal>
+        <div className="text-center mb-20">
+          <Reveal>
+             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-yellow-400 mb-4">
+                <Gift size={14} />
+                <span className="text-xs font-bold tracking-wide uppercase">Benefits</span>
+            </div>
+            <h2 className="text-3xl md:text-5xl font-black text-white leading-tight break-keep">
+              수강생의 성장을 위한<br />
+              <span className="text-yellow-400">한직교 맞춤 혜택</span>
+            </h2>
+            <p className="text-zinc-500 mt-4 text-sm">
+                교육비부터 장비, 취업 지원까지 아낌없이 지원합니다.
+            </p>
+          </Reveal>
+        </div>
 
         {/* Benefit Items Grid */}
         <div className="flex flex-wrap justify-center gap-6 md:gap-8">

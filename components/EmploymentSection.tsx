@@ -1,5 +1,7 @@
+
 import React, { useRef, useState, useEffect, ReactNode } from 'react';
 import { EMPLOYMENT_STATUS } from '../constants';
+import { Building2 } from 'lucide-react';
 
 // 스크롤 애니메이션 컴포넌트
 interface RevealProps {
@@ -51,13 +53,18 @@ export const EmploymentSection: React.FC = () => {
     <section id="employment" className="py-24 bg-zinc-950 overflow-hidden">
       <div className="container mx-auto px-4 mb-8">
         <Reveal>
-          <div className="text-center mb-12">
-              <div>
-                  <h2 className="text-yellow-400 text-xs font-bold tracking-widest uppercase mb-3">Employment Status</h2>
-                  <h3 className="text-3xl font-bold text-white">취업 현황</h3>
+          <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-zinc-900 border border-zinc-800 text-yellow-400 mb-4">
+                  <Building2 size={14} />
+                  <span className="text-xs font-bold tracking-wide uppercase">Employment Status</span>
               </div>
-              <p className="text-gray-400 text-sm mt-4">
-                  20대부터 50대까지, 나이와 성별을 불문하고<br/> 많은 수료생들이 현장에서 활약하고 있습니다.
+              <h2 className="text-3xl md:text-5xl font-black text-white leading-tight">
+                  꿈을 현실로 만드는<br />
+                  <span className="text-yellow-400">취업 현황</span>
+              </h2>
+              <p className="text-zinc-500 mt-4 text-sm">
+                  한직교만의 압도적 취업결과!<br/>
+                  많은 수료생들이 현장에서 활약하고 있습니다.
               </p>
           </div>
         </Reveal>
