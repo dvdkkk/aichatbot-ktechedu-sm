@@ -71,7 +71,7 @@ export const Navigation: React.FC = () => {
             </a>
           ))}
           <a 
-            href="tel:18775280" 
+            href="tel:18005027" 
             onClick={(e) => {
               const isPc = window.innerWidth >= 1024;
               if (isPc) handleNavClick(e, '#consultation');
@@ -79,7 +79,7 @@ export const Navigation: React.FC = () => {
             className="flex items-center gap-2 bg-yellow-400 text-black px-5 py-2 rounded-full font-bold text-lg hover:bg-yellow-300 transition-transform hover:scale-105"
           >
             <PhoneCall size={20} />
-            1877-5280
+            1800-5027
           </a>
         </div>
 
