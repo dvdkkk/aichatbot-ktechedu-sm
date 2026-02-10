@@ -197,7 +197,7 @@ export const CourseSection: React.FC = () => {
                <div className="grid lg:grid-cols-3 gap-6 relative z-10">
                  <FinalProjectCard 
                     num="01"
-                    title="Django 기반 챗봇시스템"
+                    title="Django기반 챗봇시스템"
                     items={[
                       "대화형 웹 챗봇 서비스 구현",
                       "의도 분류(ML) 후 예측, 추천, FAQ 응답 제공",
