@@ -54,7 +54,7 @@ export const CourseSection: React.FC = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-black text-white mb-6 leading-tight">
             최종 프로젝트를 향한<br />
-            <span className="text-yellow-400">실무 위주의 체계적인 커리큘럼</span>
+            <span className="text-yellow-400">실무위주 체계적인 커리큘럼</span>
           </h2>
           <p className="text-gray-400 text-sm md:text-base max-w-2xl mx-auto">
             기초 문법부터 인공지능 플랫폼 구축까지,<br />
@@ -96,7 +96,7 @@ export const CourseSection: React.FC = () => {
           {/* Phase 2 */}
           <CurriculumPhase 
             phase="PHASE 2"
-            title="MariaDB (DB 프로그램)"
+            title="MariaDB(DB프로그램)" 
             subtitle="데이터베이스를 저장하고 관리하는 DB 프로그램"
             icon={Database}
             image="https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=2121&auto=format&fit=crop"
@@ -161,7 +161,7 @@ export const CourseSection: React.FC = () => {
             subtitle="데이터 통계를 기반으로 한 AI 챗봇의 예측 기능 구현"
             icon={Brain}
             image="https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=2832&auto=format&fit=crop"
-            projectTitle="머신러닝을 기반으로 AI 챗봇의 예측 기능 구현"
+            projectTitle="머신러닝기반 AI 챗봇 예측 기능 구현"
             steps={[
               {
                 title: "STEP 1 기초",
@@ -191,13 +191,13 @@ export const CourseSection: React.FC = () => {
                <div className="text-center mb-12 relative z-10">
                  <div className="inline-block bg-yellow-400 text-black font-black px-4 py-1 rounded-full text-sm mb-4">PHASE 5</div>
                  <h3 className="text-4xl md:text-5xl font-black text-white mb-4">최종 프로젝트 <span className="text-yellow-400">(AI 챗봇 구동)</span></h3>
-                 <p className="text-gray-400">AI 챗봇을 개발하고 포트폴리오를 완성합니다.</p>
+                 <p className="text-gray-400">AI챗봇개발하고 포트폴리오를 완성합니다.</p>
                </div>
 
                <div className="grid lg:grid-cols-3 gap-6 relative z-10">
                  <FinalProjectCard 
                     num="01"
-                    title="Django 기반 챗봇 시스템"
+                    title="Django 기반 챗봇시스템"
                     items={[
                       "대화형 웹 챗봇 서비스 구현",
                       "의도 분류(ML) 후 예측, 추천, FAQ 응답 제공",

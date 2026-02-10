@@ -127,7 +127,7 @@ export const ReviewSection: React.FC = () => {
                 수료생들의 <span className="text-yellow-400">생생한 후기</span>
             </h2>
             <p className="text-zinc-500 mt-4 text-sm">
-                실제 수강생들이 증명하는 한직교의 교육 퀄리티를 확인하세요.
+                수강생들이 증명하는 한직교의 교육 퀄리티를 확인하세요.
             </p>
         </Reveal>
 
