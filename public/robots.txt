@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aichatbot-ktechedu-sm.vercel.app/sitemap.xml
